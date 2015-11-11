@@ -1,0 +1,62 @@
+﻿@model CIMAS.DAL.StuBasicIfo
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout_New.cshtml";
+}
+@using(Html.BeginForm()){
+<div class="index_xtitle">
+        <ul>
+            <li class="index_xtitle_l icon"></li>
+            <li class="index_xtitle_c">修改学生信息</li>
+            <li class="index_xtitle_r icon"></li>
+        </ul>
+    </div>
+    
+    <div align="left" style="padding-left: 30px">
+        <br/><br/><br/><strong style="color: Red;">@Html.ValidationSummary()</strong>
+    </div>
+
+    <div>
+        <ul class="bianji_main">
+            <li><strong class="color1">学号</strong> <span >            
+                @Html.TextBox("StuCode", Model.StuCode, new { @class = "bianji_main_text icon" })
+                
+            </span></li>
+            <li><strong class="color1">姓名</strong> <span>
+                @Html.TextBox("Name", Model.Name, new { @class = "bianji_main_text icon" })
+            </span></li> 
+            <li><strong class="color1">性别</strong> <span >            
+                @Html.DropDownListFor(p =>p.Sex, new SelectList(new[] { "男", "女" }), new { @class = "bianji_main_text icon" })
+            </span></li> 
+            <li><strong class="color1">出生日期</strong> <span>            
+                 @{
+                    if (Model.Birthdate == null)
+                    {
+                        <input class="bianji_main_text icon" name="Birthdate"  type="text" value=""
+                            onclick="WdatePicker()" />
+                    }
+                    else
+                    {
+                        DateTime tempDateTime = (DateTime)Model.Birthdate;
+                        <input class="bianji_main_text icon" name="Birthdate"   type="text" value="@tempDateTime.ToString("yyyy-MM-dd")" onClick="WdatePicker()"/>
+                    }
+                }</span></li>           
+
+            <li><strong class="color1"></strong>
+            <a class="bianji_tijiao icon" id="btnSubmit" href="#"></a>
+                @Html.ActionLink(" ", "List", new { @class = "bianji_quxiao icon" })
+            </li>
+        </ul>
+    </div>
+   
+}
+<script type="text/javascript">
+    $(function () {
+        var btnSubmit = $("#btnSubmit");
+        btnSubmit.click(function () {
+            $("form").submit();
+        })
+    })
+</script>
+

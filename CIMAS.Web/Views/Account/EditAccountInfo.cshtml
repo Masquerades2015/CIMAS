@@ -1,0 +1,51 @@
+﻿@model CIMAS.DAL.Account
+@{
+    ViewBag.Title = "EditAccountInfo";
+    Layout = "~/Views/Shared/_Layout_New.cshtml";
+}
+
+@Html.ValidationSummary()
+<div class="index_xtitle">
+    <ul>
+        <li class="index_xtitle_l icon"></li>
+        <li class="index_xtitle_c">个人信息
+        </li>
+        <li class="index_xtitle_r icon"></li>
+    </ul>
+</div>
+@using (Html.BeginForm())
+{
+<table cellpadding="0" cellspacing="0" class="index_xmain">
+    <tr>
+        <td style="padding-top: 10px;">
+            <strong class="color1">用户名</strong><span>@Model.UserName</span>
+        </td>
+        
+        @*<td style="padding-top: 10px;">
+            <strong class="color1">用户类别</strong><span>@Model.AccountRole.Name</span>
+            @Html.HiddenFor(x => x.RoleCode)
+        </td>*@
+        
+    </tr>
+    <tr>
+        @*<td style="padding-top: 10px;">
+            <strong class="color1">密码</strong><span>@Html.PasswordFor(x => x.Password)</span>
+        </td>*@
+        <td style="padding-top: 10px;">
+            <strong class="color1">确认密码</strong><span>@Html.Password("Confirm")</span>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" style=" text-align:center;">
+            <a class="bianji_tijiao icon" id="btnSubmit" href="#"></a>
+        </td>
+    </tr>
+    </table>
+}
+<script type="text/javascript">
+    $(function () {
+        $("#btnSubmit").click(function () {
+            $("form").submit();
+        })
+    })
+</script>

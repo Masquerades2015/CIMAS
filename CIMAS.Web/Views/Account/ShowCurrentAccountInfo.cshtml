@@ -1,0 +1,34 @@
+﻿@model  CIMAS.DAL.AccountModel.CurrentUser
+<div class="index_yonghu icon" style="height:80px;">
+    <ul>
+        <li class="index_name"><span>@Model.TrueName</span>
+            @if (Model.RoleCode.Trim().ToUpper() == "Enterprise".ToUpper())
+            {//企业用户
+                <img src="@Url.Content("~/content/style/images/User_Enterprise.png")"/>
+            }
+            @if (Model.RoleCode.Trim().ToUpper() == "AdvansedUser".ToUpper())
+            {//高级用户
+                <img src="@Url.Content("~/content/style/images/User_Advansed.png")"/>
+            }
+            @if (Model.RoleCode.Trim().ToUpper() == "Talent".ToUpper())
+            {//人才用户
+                <img src="@Url.Content("~/content/style/images/User_Talent.png")"/>
+            }
+            @if (Model.RoleCode.Trim().ToUpper() == "DataAdmin".ToUpper())
+            {//数据管理员
+                <img src="@Url.Content("~/content/style/images/User_DataAdmin.png")"/>
+            }
+            @if (Model.RoleCode.Trim().ToUpper() == "SysAdmin".ToUpper())
+            {//系统管理员
+                <img src="@Url.Content("~/content/style/images/User_SysAdmin.png")"/>
+            }
+            @{
+                //if (Model.RoleCode.Trim().ToUpper() == "Expert".ToUpper())
+                {//专家用户
+                    <img src="@Url.Content("~/content/style/images/User_Expert.png")"/>
+                }
+            }
+        </li>
+
+    </ul>
+</div>

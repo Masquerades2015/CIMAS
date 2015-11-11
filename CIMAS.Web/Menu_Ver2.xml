@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<NavItem>
+
+
+  <!--=====================================系统管理员sysadmin显示菜单=============================================-->
+  <!--<NavItem title="用户管理" roles=""   controller="" action="" routeValue="" code="BB00" img="icon_DataAdmin_Account.jpg">
+    <NavItem title="数据管理员"  roles=""  controller="account" action="accountlist" routeValue="" code="BB02" />
+  </NavItem>
+
+  <NavItem title="系统设置" roles=""   controller="" action="" routeValue="" code="AA00" img="icon_Talent_Setting.jpg">
+  </NavItem>-->
+
+  <!--=====================================学员权限登陆显示上方菜单=====================================================-->
+  <!--<NavItem title="个人信息" roles=""   controller="Student" action="List" routeValue="" code="HH00" >
+    <NavItem title="个人基本信息"  roles=""  controller="PersonalBasicIfo" action="Index" routeValue="" code="HH01" />
+    <NavItem title="家庭信息" roles=""   controller="Student" action="List" routeValue="" code="HH02" />
+    <NavItem title="体能信息"  roles=""  controller="Student" action="List" routeValue="" code="HH03" />
+    <NavItem title="学习信息"  roles=""  controller="Enterprise" action="ShowEmployeeInfo" routeValue="" code="HH04" />
+    <NavItem title="奖惩信息"  roles=""  controller="Enterprise" action="ShowFinance" routeValue="" code="HH05" />
+    <NavItem title="伤病情况"  roles=""  controller="Enterprise" action="ShowFinance" routeValue="" code="HH06" />
+    <NavItem title="选课情况"  roles=""  controller="Enterprise" action="ShowFinance" routeValue="" code="HH07" />
+    <NavItem title="个人课表"  roles=""  controller="Enterprise" action="ShowFinance" routeValue="" code="HH08" />
+  </NavItem>
+  <NavItem title="连队信息" roles=""   controller="Student" action="List" routeValue="" code="HH00" >
+    <NavItem title="十三连"  roles=""  controller="PersonalBasicIfo" action="Index" routeValue="" code="HH01" />
+    <NavItem title="十四连" roles=""   controller="Student" action="List" routeValue="" code="HH02" />
+    <NavItem title="十五连"  roles=""  controller="Student" action="List" routeValue="" code="HH03" />
+  </NavItem>-->
+
+  <NavItem title="个人信息" roles=""   controller="" action="" routeValue="" code="HH00" >
+    <NavItem title="个人基本信息"  roles=""  controller="PersonalBasicIfo" action="Index" routeValue="" code="HH01" />
+    <NavItem title="家庭信息" roles=""   controller="Student" action="List" routeValue="" code="HH02" />
+    <NavItem title="体能信息"  roles=""  controller="" action="" routeValue="" code="HH03" />
+    <NavItem title="学习信息"  roles=""  controller="" action="" routeValue="" code="HH04" />
+    <NavItem title="奖惩信息"  roles=""  controller="" action="" routeValue="" code="HH05" />
+    <NavItem title="伤病情况"  roles=""  controller="" action="" routeValue="" code="HH06" />
+    <NavItem title="选课情况"  roles=""  controller="" action="" routeValue="" code="HH07" />
+    <NavItem title="个人课表"  roles=""  controller="" action="" routeValue="" code="HH08" />
+  </NavItem>
+
+  <!--<NavItem title="连队信息" roles=""   controller="Student" action="List" routeValue="" code="HH00" >
+    <NavItem title="十三连"  roles=""  controller="PersonalBasicIfo" action="Index" routeValue="" code="HH01" >
+      <NavItem title="连队基本信息" roles=""   controller="" action="" routeValue="" code="HH02" />
+      <NavItem title="连组织架构图" roles=""   controller="" action="" routeValue="" code="HH02" />
+      <NavItem title="连队体能情况" roles=""   controller="" action="" routeValue="" code="HH02" />
+      <NavItem title="连队学习情况" roles=""   controller="" action="" routeValue="" code="HH02" />
+      <NavItem title="连队行管情况" roles=""   controller="" action="" routeValue="" code="HH02" />
+      <NavItem title="连队荣誉" roles=""   controller="" action="" routeValue="" code="HH02" />
+    </NavItem>
+    <NavItem title="十四连" roles=""   controller="Student" action="List" routeValue="" code="HH02" >
+      <NavItem title="连队基本信息" roles=""   controller="" action="" routeValue="" code="HH02" />
+      <NavItem title="连组织架构图" roles=""   controller="" action="" routeValue="" code="HH02" />
+      <NavItem title="连队体能情况" roles=""   controller="" action="" routeValue="" code="HH02" />
+      <NavItem title="连队学习情况" roles=""   controller="" action="" routeValue="" code="HH02" />
+      <NavItem title="连队行管情况" roles=""   controller="" action="" routeValue="" code="HH02" />
+      <NavItem title="连队荣誉" roles=""   controller="" action="" routeValue="" code="HH02" />
+    </NavItem>
+    <NavItem title="十五连"  roles=""  controller="Student" action="List" routeValue="" code="HH03" >
+      <NavItem title="连队基本信息" roles=""   controller="" action="" routeValue="" code="HH02" />
+      <NavItem title="连组织架构图" roles=""   controller="" action="" routeValue="" code="HH02" />
+      <NavItem title="连队体能情况" roles=""   controller="" action="" routeValue="" code="HH02" />
+      <NavItem title="连队学习情况" roles=""   controller="" action="" routeValue="" code="HH02" />
+      <NavItem title="连队行管情况" roles=""   controller="" action="" routeValue="" code="HH02" />
+      <NavItem title="连队荣誉" roles=""   controller="" action="" routeValue="" code="HH02" />
+    </NavItem>
+  </NavItem>
+
+  <NavItem title="营信息" roles=""   controller="" action="" routeValue="" code="HH00" >
+    <NavItem title="营组织架构图" roles=""   controller="" action="" routeValue="" code="HH02" />
+    <NavItem title="营荣誉" roles=""   controller="" action="" routeValue="" code="HH02" >
+      <NavItem title="集体荣誉" roles=""   controller="" action="" routeValue="" code="HH02" />
+      <NavItem title="个人荣誉" roles=""   controller="" action="" routeValue="" code="HH02" />
+    </NavItem>
+    <NavItem title="大型活动" roles=""   controller="" action="" routeValue="" code="HH02" />
+  </NavItem>
+
+  <NavItem title="  统计分析" roles=""   controller="" action="" routeValue="" code="HH00" >
+    <NavItem title="基本信息统计分析" roles=""   controller="" action="" routeValue="" code="HH02" />
+    <NavItem title="学习统计分析" roles=""   controller="" action="" routeValue="" code="HH02" />
+    <NavItem title="体能统计分析" roles=""   controller="" action="" routeValue="" code="HH02" />
+    <NavItem title="行管信息统计分析" roles=""   controller="" action="" routeValue="" code="HH02" />
+  </NavItem>-->
+
+
+  <!--=====================================学员登录左侧菜单=============================================-->
+  <!--<NavItem title="个人设置" roles=""   controller="" action="" routeValue="" code="ZZ00" img="icon_Talent_Setting.jpg">
+    <NavItem title="个人信息"  roles=""  controller="Account" action="ShowAccountInfo" routeValue="" code="ZZ01" />
+    <NavItem title="修改信息"  roles=""  controller="Account" action="EditAccountInfo" routeValue="" code="ZZ02" />
+  </NavItem>-->
+
+
+</NavItem>

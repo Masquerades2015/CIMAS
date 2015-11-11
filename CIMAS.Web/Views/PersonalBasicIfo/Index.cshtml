@@ -1,0 +1,217 @@
+﻿@model CIMAS.DAL.StuBasicIfo
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout_New.cshtml";
+}
+
+
+<div id="table" @*class="container"*@>
+    <table class="table table-bordered" style="font-size: 15px;">
+
+        <tr>
+            <th style="width: 100px;">姓名:
+            </th>
+            <td>
+                @Html.DisplayFor(item => item.Name)
+            </td>
+
+            <th style="width: 100px;">性别:
+            </th>
+            <td>
+                @Html.DisplayFor(item => item.Sex)
+            </td>
+
+            <th>民族: 
+            </th>
+            <td style="width: 80px;">
+                @Html.DisplayFor(item => item.DictNation.Name)
+                <!--如何利用外键连接外表显示-->
+            </td>
+
+            <td colspan="3" rowspan="3">照片
+            </td>
+
+        </tr>
+        <tr>
+
+            <th>学号:
+            </th>
+            <td>
+                @Html.DisplayFor(item => item.StuCode)
+            </td>
+
+            <th>专业班代号:
+            </th>
+            <td>
+                @Html.DisplayFor(item => item.DictProfClass.ClassCode)
+
+            </td>
+            <th>专业名:
+            </th>
+            <td>
+                @Html.DisplayFor(item => item.DictProfClass.DictProfName.Name)
+            </td>
+        </tr>
+        <tr>
+            <th>籍贯:</th>
+            <td>
+                @Html.DisplayFor(item => item.BirthPlace)
+            </td>
+            <th>身份证号:</th>
+            <td colspan="3">
+                @Html.DisplayFor(model => model.IDCardNumber)
+            </td>
+        </tr>
+        <tr>
+            <th>出生日期:</th>
+            <td>
+                @{
+                    String RegDate = "";
+                    if (Model.Birthdate == null)
+                    {
+                    @RegDate;
+                    }
+                    else
+                    {
+                        DateTime b = ((DateTime)Model.Birthdate);
+                    @b.ToString("yyyy-MM-dd");
+                    }
+                }
+            </td>
+            <th>户籍类型:</th>
+            <td>
+                @Html.DisplayFor(model => model.DictRegister.Type)
+            </td>
+            <th>生源:</th>
+            <td>
+                @Html.DisplayFor(model => model.DictStudentSource.Type)
+            </td>
+            <th>邮编:</th>
+            <td colspan="3">
+                @Html.DisplayFor(model => model.ZIPCode)
+            </td>
+
+        </tr>
+        <tr>
+            <th>电话(手机):</th>
+            <td>
+                @Html.DisplayFor(model => model.TelephoneNum)
+            </td>
+            <th>QQ:</th>
+            <td>
+                @Html.DisplayFor(model => model.QQNum)
+            </td>
+            <th>政治面貌:</th>
+            <td colspan="3">
+                @Html.DisplayFor(model => model.DictPoliticsStatu.Type)
+            </td>
+
+        </tr>
+        <tr>
+            <th>家庭住址:</th>
+            <td colspan="7">
+                @Html.DisplayFor(model => model.FamilyAddress)
+            </td>
+        </tr>
+        <tr>
+            <th>特长:</th>
+            <td colspan="7">
+                @Html.DisplayFor(model => model.Specialty)
+            </td>
+        </tr>
+        <tr>
+            <th>个人经历:</th>
+            <td colspan="7">
+                @Html.DisplayFor(model => model.PersonalExperience)
+            </td>
+        </tr>
+
+        @*
+
+
+        <tr>           
+            <td>
+                @Html.DisplayFor(modelItem => item.SingleChild)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SingleParent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DictFamilyOrigin.Type)
+            </td>
+            <td>
+              
+            </td>
+        </tr>*@
+
+
+
+    </table>
+</div>
+
+<div id="xiugai">
+    @Html.ActionLink("修改", "Edit", new { id = Model.ID }, new { @class = "btn btn-primary btn-lg", @style = "line-height:3px;" })
+</div>
+
+
+
+@*<!-- Single button -->
+<div class="btn-group">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Action <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Something else here</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a href="#">Separated link</a></li>
+    </ul>
+</div>*@
+@*<nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top">
+    <ul class="nav bs-docs-sidenav">
+
+        <li>
+            <a href="#glyphicons">Glyphicons 字体图标</a>
+            <ul class="nav">
+                <li><a href="#glyphicons-glyphs">所有可用的图标</a></li>
+                <li><a href="#glyphicons-how-to-use">如何使用</a></li>
+                <li><a href="#glyphicons-examples">实例</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#dropdowns">下拉菜单</a>
+            <ul class="nav">
+                <li><a href="#dropdowns-example">实例</a></li>
+                <li><a href="#dropdowns-alignment">对齐</a></li>
+                <li><a href="#dropdowns-headers">标题</a></li>
+                <li><a href="#dropdowns-divider">分割线</a></li>
+                <li><a href="#dropdowns-disabled">禁用的菜单项</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>*@
+
+@*<div></div>*@
+<style>
+    #xiugai {
+        float: right;
+        margin-right: 100px;
+    }
+
+    #table {
+        margin-top: 30px;
+        margin-left: 6px;
+    }
+
+    th {
+        text-align: center;
+    }
+</style>
+
+
+
+
+
+

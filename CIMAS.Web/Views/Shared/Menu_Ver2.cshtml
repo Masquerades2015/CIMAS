@@ -1,0 +1,68 @@
+﻿@model IEnumerable<System.Xml.Linq.XElement>
+@{
+    ViewBag.Title = "NavLeft";    
+}
+@functions{
+    //生成Url的querystring
+    private RouteValueDictionary GetRouteData(string routeValue, string code = "")
+    {
+        routeValue = routeValue.Trim();
+        string[] nameValues = routeValue.Split(new char[] { ';' });
+        RouteValueDictionary result = new RouteValueDictionary();
+
+        //如果路由对象里没有code，则加之
+        if (!result.ContainsKey("code")) result.Add("code", code);
+
+        //----
+        foreach (string namevalue in nameValues)
+        {
+            string[] pair = namevalue.Split(new char[] { '=' });
+            if (pair.Length > 1)
+                result.Add(pair[0], pair[1]);
+        }
+        return result;
+    }
+}
+<div @*id="menuList"*@ style="position:fixed;">
+    @foreach (var nav1 in Model)
+    { 
+        <div @*class="boxStyle"*@>
+           @* <div class="caption open">
+                <img src="@Url.Content("~/content/style/images/" + nav1.Attribute("img").Value)" alt="@nav1.Attribute("title").Value" title="@nav1.Attribute("title").Value"/>
+            </div>*@
+            <div @*class="LM1 cur" *@>
+                <ul class="nav bs-docs-sidenav" style="font-size:medium;">
+                    @foreach (var xElem in nav1.Elements("NavItem"))
+                    {
+                        var controller = xElem.Attribute("controller").Value;
+                        var action = xElem.Attribute("action").Value;
+                        var title = xElem.Attribute("title").Value;
+                        var routeValues = GetRouteData(xElem.Attribute("routeValue").Value, xElem.Attribute("code").Value);
+                        var htmlAttr = new Dictionary<string, object>();
+
+                        string code = "";
+                        if (!HttpContext.Current.Request.QueryString["code"].IsEmpty())
+                        { 
+                            code = HttpContext.Current.Request.QueryString["code"].Trim().ToLower(); 
+                        }
+                        if (xElem.Attribute("code").Value.Trim().ToLower() == code)
+                        {
+                            htmlAttr = new Dictionary<string, object> { { "class", "index_menuerji_a1" } };
+                        <li>
+                            @Html.ActionLink(title, action, controller, routeValues, htmlAttr)
+                        </li>
+                        }
+                        else
+                        {
+                        <li @*class="icon"*@>
+                            @Html.ActionLink(title, action, controller, routeValues, htmlAttr)
+                        </li>
+                        }
+                    }
+                </ul>
+            </div>
+            <div class="infor">
+            </div>
+        </div>    
+    }
+</div>

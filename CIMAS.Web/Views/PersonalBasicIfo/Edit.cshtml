@@ -1,0 +1,193 @@
+﻿@model CIMAS.DAL.StuBasicIfo
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout_New.cshtml";
+}
+
+<h2><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;修改个人信息</strong></h2>
+<hr />
+
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    
+
+    @Html.HiddenFor(model => model.ID) 
+    <div id="all">
+        <table id="EditTable">
+            <tr>
+                <td style="width: 110px;">姓名:</td>
+                <td style="width: 220px;">@Html.TextBox("Name", Model.Name, new { @class = "form-control", @style = "width:130px;" })
+                </td>
+                <td>@Html.ValidationMessageFor(model => model.Name)</td>
+                @* <P></P>*@
+
+                @*<td colspan="2" rowspan="3" style="text-align: center">图片</td>*@
+            </tr>
+            <tr>
+                <td>性别:</td>
+                <td>@Html.DropDownListFor(model => model.Sex, new SelectList(new[] { "", "男", "女" }), new { @class = "form-control", @style = "width:130px;" })</td>
+                <td>@Html.ValidationMessageFor(model => model.Sex)</td>
+
+
+
+            </tr>
+            <tr>
+                <td>民族:</td>
+                <td>@Html.DropDownList("DictNationID", (SelectList)ViewBag.DictNationID, new { @class = "form-control", @style = "width:130px;" })</td>
+                <td>
+                    @Html.ValidationMessageFor(model => model.DictNationID)
+                </td>
+            </tr>
+            <tr>
+                <td>学号:</td>
+                <td>@Html.TextBox("StuCode", Model.StuCode, new { @class = "form-control", @style = "width:130px;", })</td>
+                <td>
+                    @Html.ValidationMessageFor(model => model.StuCode)
+                </td>
+            </tr>
+            <tr>
+                <td>专业班代号:</td>
+                <td>@Html.DropDownList("DictProfClassID", (SelectList)ViewBag.DictProfClassID, new { @class = "form-control", @style = "width:130px;" })</td>
+                <td>
+                    @Html.ValidationMessageFor(model => model.DictProfClass.ClassCode)
+                </td>
+            </tr>
+            <tr>
+                <td>专业名称:</td>
+                <td>@Html.DropDownList("DictProfNameID", (SelectList)ViewBag.DictProfNameID, new { @class = "form-control", @style = "width:130px;" })</td>
+                <td>
+                    @Html.ValidationMessageFor(model => model.DictProfClass.DictProfName.Name)
+                </td>
+            </tr>
+            <tr>
+
+                <td>籍贯:</td>
+                <td>@Html.TextBox("BirthPlace", Model.BirthPlace, new { @class = "form-control", @style = "width:130px;", })</td>
+                <td>
+                    @Html.ValidationMessageFor(model => model.BirthPlace)
+                </td>
+            </tr>
+            <tr>
+                <td>身份证号:</td>
+                <td>@Html.TextBox("IDCardNumber", Model.IDCardNumber, new { @class = "form-control", @style = "width:200px;", })</td>
+                <td>
+                    @Html.ValidationMessageFor(model => model.IDCardNumber)
+                </td>
+            </tr>
+
+            <tr>
+                <td>出生日期:</td>
+                <td>@Html.TextBox("Birthdate", ((DateTime)Model.Birthdate).ToString("yyyy-MM-dd"), new { @class = "form-control", @style = "width:130px;", @onclick = "WdatePicker()" })</td>
+                <td>
+                    @Html.ValidationMessageFor(model => model.Birthdate)
+                </td>
+            </tr>
+            <tr>
+                <td>户籍类型:</td>
+                <td>@Html.DropDownList("DictRegisterID", (SelectList)ViewBag.DictRegisterID, new { @class = "form-control", @style = "width:130px;" })</td>
+                <td>
+                    @Html.ValidationMessageFor(model => model.DictRegisterID)
+                </td>
+            </tr>
+            <tr>
+                <td>生源:</td>
+                <td>@Html.DropDownList("DictStuSourceID", (SelectList)ViewBag.DictStuSourceID, new { @class = "form-control", @style = "width:130px;" })</td>
+                <td>
+                    @Html.ValidationMessageFor(model => model.DictStuSourceID)
+                </td>
+            </tr>
+            <tr>
+                <td>政治面貌:</td>
+                <td>@Html.DropDownList("DictPoliticsStatusID", (SelectList)ViewBag.DictPoliticsStatusID, new { @class = "form-control", @style = "width:130px;" })</td>
+                <td>
+                    @Html.ValidationMessageFor(model => model.DictPoliticsStatusID)
+                </td>
+            </tr>
+            <tr>
+                <td>电话(手机):</td>
+                <td>@Html.TextBox("TelephoneNum", Model.TelephoneNum, new { @class = "form-control", @style = "width:130px;", })</td>
+                <td>
+                    @Html.ValidationMessageFor(model => model.TelephoneNum)
+                </td>
+            </tr>
+            <tr>
+
+                <td>QQ:</td>
+                <td>@Html.TextBox("QQNum", Model.QQNum, new { @class = "form-control", @style = "width:130px;", })</td>
+                <td>
+                    @Html.ValidationMessageFor(model => model.QQNum)
+                </td>
+            </tr>
+            <tr>
+                <td>邮编:</td>
+                <td>@Html.TextBox("ZIPCode", Model.ZIPCode, new { @class = "form-control", @style = "width:130px;", })</td>
+                <td>
+                    @Html.ValidationMessageFor(model => model.ZIPCode)
+                </td>
+            </tr>
+            <tr>
+                <td>家庭住址:</td>
+                <td colspan="2">@Html.TextArea("FamilyAddress", Model.FamilyAddress, new { @class = "form-control", @style = "width:600px;", })
+                    @Html.ValidationMessageFor(model => model.FamilyAddress)
+                </td>
+            </tr>
+
+            <tr>
+                <td>特长:</td>
+                <td colspan="2">@Html.TextArea("Specialty", Model.Specialty, new { @class = "form-control", @style = "width:600px;", })
+                    @Html.ValidationMessageFor(model => model.Specialty)
+                </td>
+            </tr>
+
+            <tr>
+                <td>个人经历:</td>
+                <td colspan="2">@Html.TextArea("PersonalExperience", Model.PersonalExperience, new { @class = "form-control", @style = "height:200px;width:600px;", })
+                    @Html.ValidationMessageFor(model => model.PersonalExperience)         
+                </td>
+            </tr>
+
+        </table>
+
+        <p>
+            <input type="submit" value="提交" id="btnsubmit" class="btn btn-primary btn-lg" style="line-height: 3px;" />
+
+        </p>
+    </div>
+   
+}
+
+<script type="text/javascript">
+    $(function () {
+        var btnSubmit = $("#btnSubmit");
+        btnSubmit.click(function () {
+            $("form").submit();
+
+        })
+    })
+</script>
+
+<style>
+    #all {
+        margin-left: 15px;
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    /*table {
+        border-collapse: collapse;
+    }*/
+
+    td {
+        padding: 6px;
+    }
+
+    #btnsubmit {
+        margin-left: 350px;
+        margin-top: 20px;
+    }
+</style>
+

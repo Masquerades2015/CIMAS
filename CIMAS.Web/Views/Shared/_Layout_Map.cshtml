@@ -1,0 +1,114 @@
+@using TalentMIS.Web.HtmlHelpers
+@{
+    Layout = null;
+}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <title>北京市科委人才地图</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <link rel="shortcut icon" href="@Url.Content("~/Content/Style/favicon.ico")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/content/style/css/css.css")" />
+    <script type="text/javascript" src="@Url.Content("~/scripts/jquery-1.7.1.min.js")"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var allSubItems = $(".LM1"); //所有二级菜单
+            allSubItems.has(".index_menuerji_a1").slideDown().prev().addClass("open"); //把当前功能菜单所在的一级菜单展开
+
+            $("div.caption").click(function () {
+                if ($(this).hasClass('open')) {
+                    $(this).removeClass('open').addClass("close").
+			            next().slideUp();
+                }
+                else if ($(this).hasClass('close')) {
+                    $(this).removeClass('close').addClass('open').next().slideDown();
+                    var $captions = $(this).parent().siblings().children('.caption');
+                    $captions.each(function () {
+                        if ($(this).hasClass('open')) {
+                            $(this).removeClass('open').addClass('close').next().slideUp();
+                        }
+                    });
+                }
+            });
+
+            // 为偶数行设置样式类
+            $(".list tbody").each(function () {
+                $(this).children("tr:odd").addClass("chaxun_main_td_bg");
+            })
+
+            //$("div").css("border", "solid");
+            //$("td").css("border", "solid 1px");
+
+        });
+
+    </script>
+    <style>
+        .boxStyle .caption
+        {
+            border-top: none;
+            cursor: pointer;
+            font-family: "Lucida Sans Unicode";
+            font-size: 12px;
+        }
+        .boxStyle
+        {
+            overflow: hidden;
+            position: relative;
+        }
+        img
+        {
+            border: none;
+        }
+        .infor
+        {
+            background: #000000;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            filter: Alpha(opacity=50);
+            -moz-opacity: .5;
+            opacity: 0.5;
+            display: none;
+            cursor: pointer;
+        }
+        .infor:hover
+        {
+            filter: Alpha(opacity=90);
+            -moz-opacity: .9;
+            opacity: .9;
+        }
+
+    .table_register{border-left: #ecf2f7 solid 1px;border-right: #ecf2f7 solid 1px;border-bottom: #ecf2f7 solid 1px; width:706px; margin-left:150px;}
+    .table_register_tr{line-height:45px;}
+    .table_register_td_l{width:150px; text-align:right;  font-weight:bold; color:#0969b0; font-size:14px;}
+    .table_register_td_c{ width:300px;}
+    .field-validation-error{color:Red;}
+
+    </style>
+</head>
+<body style="background: url(@Url.Content("~/content/style/images/index_15.jpg"));">
+    <div class="index_top0">
+        <div class="index_top">
+            <div class="index_topmain">
+                <span class="index_topmain_shijian">欢迎您进入人才地图！ </span><a class="index_topmain_tuichu icon"
+                    href="@Url.Action("login","home")"></a>
+            </div>
+        </div>
+    </div>
+    <div class="clear">
+    </div>
+    <div class="index_main0">
+        <div class="wide_main">
+
+            
+                @RenderBody()
+
+            <div class="clear">
+            </div>
+            <div class="wide_foot">
+                北京市科委人才地图 @{Html.RenderAction("Version", "Site");} 版权所有 北京市科学技术委员会</div>
+        </div>
+    </div>
+</body>
+</html>

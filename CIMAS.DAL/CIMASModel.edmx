@@ -1,0 +1,1741 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CIMASModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="CIMASModelStoreContainer">
+          <EntitySet Name="Accounts" EntityType="CIMASModel.Store.Accounts" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="AwardPunishmentIfoes" EntityType="CIMASModel.Store.AwardPunishmentIfoes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CourseTimeIfoes" EntityType="CIMASModel.Store.CourseTimeIfoes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DepartmentIfoes" EntityType="CIMASModel.Store.DepartmentIfoes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DictActivities" EntityType="CIMASModel.Store.DictActivities" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DictCoursePlaces" EntityType="CIMASModel.Store.DictCoursePlaces" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DictFamilyOrigins" EntityType="CIMASModel.Store.DictFamilyOrigins" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DictNations" EntityType="CIMASModel.Store.DictNations" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DictPoliticsStatus" EntityType="CIMASModel.Store.DictPoliticsStatus" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DictPositions" EntityType="CIMASModel.Store.DictPositions" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DictProfClasses" EntityType="CIMASModel.Store.DictProfClasses" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DictProfNames" EntityType="CIMASModel.Store.DictProfNames" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DictRegisters" EntityType="CIMASModel.Store.DictRegisters" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DictRelations" EntityType="CIMASModel.Store.DictRelations" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DictSemesters" EntityType="CIMASModel.Store.DictSemesters" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DictStudentSources" EntityType="CIMASModel.Store.DictStudentSources" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DictTerms" EntityType="CIMASModel.Store.DictTerms" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="HeightWeightIfoes" EntityType="CIMASModel.Store.HeightWeightIfoes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ImportantActivitiesIfoes" EntityType="CIMASModel.Store.ImportantActivitiesIfoes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="InjureisIfoes" EntityType="CIMASModel.Store.InjureisIfoes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OptionalCourseIfoes" EntityType="CIMASModel.Store.OptionalCourseIfoes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RequiredCourseIfoes" EntityType="CIMASModel.Store.RequiredCourseIfoes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Roles" EntityType="CIMASModel.Store.Roles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SocietyRelationIfoes" EntityType="CIMASModel.Store.SocietyRelationIfoes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="StuBasicIfoes" EntityType="CIMASModel.Store.StuBasicIfoes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="StuGradeIfoes" EntityType="CIMASModel.Store.StuGradeIfoes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="StuScheduleIfoes" EntityType="CIMASModel.Store.StuScheduleIfoes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="CIMASModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TrainingTestIfoes" EntityType="CIMASModel.Store.TrainingTestIfoes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TrainTestTimeRankIfoes" EntityType="CIMASModel.Store.TrainTestTimeRankIfoes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UnionHonorIfoes" EntityType="CIMASModel.Store.UnionHonorIfoes" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_DepartmentIfo_DictPosition" Association="CIMASModel.Store.FK_DepartmentIfo_DictPosition">
+            <End Role="DictPositions" EntitySet="DictPositions" />
+            <End Role="DepartmentIfoes" EntitySet="DepartmentIfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DepartmentIfo_DictSemester" Association="CIMASModel.Store.FK_DepartmentIfo_DictSemester">
+            <End Role="DictSemesters" EntitySet="DictSemesters" />
+            <End Role="DepartmentIfoes" EntitySet="DepartmentIfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DictProfClass_DictProfName" Association="CIMASModel.Store.FK_DictProfClass_DictProfName">
+            <End Role="DictProfNames" EntitySet="DictProfNames" />
+            <End Role="DictProfClasses" EntitySet="DictProfClasses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ImportantActivitiesIfo_DictActivity" Association="CIMASModel.Store.FK_ImportantActivitiesIfo_DictActivity">
+            <End Role="DictActivities" EntitySet="DictActivities" />
+            <End Role="ImportantActivitiesIfoes" EntitySet="ImportantActivitiesIfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OptionalCourseIfo_DictCoursePlace" Association="CIMASModel.Store.FK_OptionalCourseIfo_DictCoursePlace">
+            <End Role="DictCoursePlaces" EntitySet="DictCoursePlaces" />
+            <End Role="OptionalCourseIfoes" EntitySet="OptionalCourseIfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OptionalCourseIfo_DictSemester" Association="CIMASModel.Store.FK_OptionalCourseIfo_DictSemester">
+            <End Role="DictSemesters" EntitySet="DictSemesters" />
+            <End Role="OptionalCourseIfoes" EntitySet="OptionalCourseIfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RequiredCourseIfo_DictCoursePlace" Association="CIMASModel.Store.FK_RequiredCourseIfo_DictCoursePlace">
+            <End Role="DictCoursePlaces" EntitySet="DictCoursePlaces" />
+            <End Role="RequiredCourseIfoes" EntitySet="RequiredCourseIfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RequiredCourseIfo_DictSemester" Association="CIMASModel.Store.FK_RequiredCourseIfo_DictSemester">
+            <End Role="DictSemesters" EntitySet="DictSemesters" />
+            <End Role="RequiredCourseIfoes" EntitySet="RequiredCourseIfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RequiredCourseIfoes_DictProfClasses" Association="CIMASModel.Store.FK_RequiredCourseIfoes_DictProfClasses">
+            <End Role="DictProfClasses" EntitySet="DictProfClasses" />
+            <End Role="RequiredCourseIfoes" EntitySet="RequiredCourseIfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SocietyRelationIfo_DictPoliticsStatus" Association="CIMASModel.Store.FK_SocietyRelationIfo_DictPoliticsStatus">
+            <End Role="DictPoliticsStatus" EntitySet="DictPoliticsStatus" />
+            <End Role="SocietyRelationIfoes" EntitySet="SocietyRelationIfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SocietyRelationIfo_DictRelation" Association="CIMASModel.Store.FK_SocietyRelationIfo_DictRelation">
+            <End Role="DictRelations" EntitySet="DictRelations" />
+            <End Role="SocietyRelationIfoes" EntitySet="SocietyRelationIfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StuBasicIfo_DictFamilyOrigin" Association="CIMASModel.Store.FK_StuBasicIfo_DictFamilyOrigin">
+            <End Role="DictFamilyOrigins" EntitySet="DictFamilyOrigins" />
+            <End Role="StuBasicIfoes" EntitySet="StuBasicIfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StuBasicIfo_DictNation" Association="CIMASModel.Store.FK_StuBasicIfo_DictNation">
+            <End Role="DictNations" EntitySet="DictNations" />
+            <End Role="StuBasicIfoes" EntitySet="StuBasicIfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StuBasicIfo_DictPoliticsStatus" Association="CIMASModel.Store.FK_StuBasicIfo_DictPoliticsStatus">
+            <End Role="DictPoliticsStatus" EntitySet="DictPoliticsStatus" />
+            <End Role="StuBasicIfoes" EntitySet="StuBasicIfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StuBasicIfo_DictRegister" Association="CIMASModel.Store.FK_StuBasicIfo_DictRegister">
+            <End Role="DictRegisters" EntitySet="DictRegisters" />
+            <End Role="StuBasicIfoes" EntitySet="StuBasicIfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StuBasicIfo_DictStudentSource" Association="CIMASModel.Store.FK_StuBasicIfo_DictStudentSource">
+            <End Role="DictStudentSources" EntitySet="DictStudentSources" />
+            <End Role="StuBasicIfoes" EntitySet="StuBasicIfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StuBasicIfoes_DictProfClasses" Association="CIMASModel.Store.FK_StuBasicIfoes_DictProfClasses">
+            <End Role="DictProfClasses" EntitySet="DictProfClasses" />
+            <End Role="StuBasicIfoes" EntitySet="StuBasicIfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StuGradeIfo_DictSemester" Association="CIMASModel.Store.FK_StuGradeIfo_DictSemester">
+            <End Role="DictSemesters" EntitySet="DictSemesters" />
+            <End Role="StuGradeIfoes" EntitySet="StuGradeIfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StuScheduleIfo_OptionalCourseIfo" Association="CIMASModel.Store.FK_StuScheduleIfo_OptionalCourseIfo">
+            <End Role="OptionalCourseIfoes" EntitySet="OptionalCourseIfoes" />
+            <End Role="StuScheduleIfoes" EntitySet="StuScheduleIfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TrainingTestIfo_DictTerm" Association="CIMASModel.Store.FK_TrainingTestIfo_DictTerm">
+            <End Role="DictTerms" EntitySet="DictTerms" />
+            <End Role="TrainingTestIfoes" EntitySet="TrainingTestIfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TrainingTestIfo_TrainTestTimeRankIfo" Association="CIMASModel.Store.FK_TrainingTestIfo_TrainTestTimeRankIfo">
+            <End Role="TrainTestTimeRankIfoes" EntitySet="TrainTestTimeRankIfoes" />
+            <End Role="TrainingTestIfoes" EntitySet="TrainingTestIfoes" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Accounts">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" />
+          <Property Name="TureName" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="AwardPunishmentIfoes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="StuID" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="AorP" Type="bit" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Time" Type="datetime" Nullable="false" />
+          <Property Name="Rank" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Details" Type="nvarchar" MaxLength="130" />
+        </EntityType>
+        <EntityType Name="CourseTimeIfoes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="20" />
+          <Property Name="XingQi" Type="int" />
+          <Property Name="JIE" Type="int" />
+          <Property Name="StartWeek" Type="int" />
+          <Property Name="EndWeek" Type="int" />
+        </EntityType>
+        <EntityType Name="DepartmentIfoes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DictSemesterID" Type="int" />
+          <Property Name="StuId" Type="nchar" MaxLength="10" />
+          <Property Name="Company" Type="nchar" MaxLength="10" />
+          <Property Name="Platoon" Type="nchar" MaxLength="10" />
+          <Property Name="Squad" Type="nchar" MaxLength="10" />
+          <Property Name="DictPositionID" Type="int" />
+        </EntityType>
+        <EntityType Name="DictActivities">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="DictCoursePlaces">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Place" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="DictFamilyOrigins">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="DictNations">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="DictPoliticsStatus">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="DictPositions">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PositionName" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="DictProfClasses">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="EntranceYear" Type="char" MaxLength="4" />
+          <Property Name="DictProfNameID" Type="int" />
+          <Property Name="ClassCode" Type="char" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="DictProfNames">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="DictRegisters">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="nchar" MaxLength="4" />
+        </EntityType>
+        <EntityType Name="DictRelations">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="DictSemesters">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nchar" MaxLength="20" />
+          <Property Name="StartDay" Type="datetime" />
+          <Property Name="EndTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="DictStudentSources">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="nchar" MaxLength="4" />
+        </EntityType>
+        <EntityType Name="DictTerms">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Term" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="HeightWeightIfoes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="StuID" Type="nchar" MaxLength="10" />
+          <Property Name="Time" Type="datetime" />
+          <Property Name="Height" Type="float" />
+          <Property Name="Weight" Type="float" />
+        </EntityType>
+        <EntityType Name="ImportantActivitiesIfoes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="StuID" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="Time" Type="datetime" Nullable="false" />
+          <Property Name="DictActivityNameID" Type="int" Nullable="false" />
+          <Property Name="Details" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Position" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="InjureisIfoes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="StuID" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="Position" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="InjuresTime" Type="datetime" Nullable="false" />
+          <Property Name="RecoverOrNot" Type="nchar" Nullable="false" MaxLength="1" />
+          <Property Name="Details" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="RecoverTime" Type="nchar" Nullable="false" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="OptionalCourseIfoes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="20" />
+          <Property Name="DictSemesterID" Type="int" />
+          <Property Name="CourseTimeID" Type="int" />
+          <Property Name="DictPlaceID" Type="int" />
+          <Property Name="Weeks" Type="nchar" MaxLength="10" />
+          <Property Name="DictProfClassID" Type="int" />
+        </EntityType>
+        <EntityType Name="RequiredCourseIfoes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DictSemesterID" Type="int" />
+          <Property Name="DictProfClassID" Type="int" />
+          <Property Name="Name" Type="nvarchar" MaxLength="20" />
+          <Property Name="DictPlaceID" Type="int" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="SocietyRelationIfoes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="StuID" Type="nchar" MaxLength="10" />
+          <Property Name="Name" Type="nvarchar" MaxLength="10" />
+          <Property Name="DictRelationID" Type="int" />
+          <Property Name="WorkPlace" Type="nvarchar" MaxLength="20" />
+          <Property Name="Position" Type="nvarchar" MaxLength="10" />
+          <Property Name="TEL" Type="nvarchar" MaxLength="12" />
+          <Property Name="DictPoliticsStatusID" Type="int" />
+        </EntityType>
+        <EntityType Name="StuBasicIfoes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="20" />
+          <Property Name="Sex" Type="nchar" MaxLength="1" />
+          <Property Name="StuCode" Type="nchar" MaxLength="10" />
+          <Property Name="DictProfClassID" Type="int" />
+          <Property Name="DictNationID" Type="int" />
+          <Property Name="BirthPlace" Type="nvarchar" MaxLength="10" />
+          <Property Name="IDCardNumber" Type="nvarchar" MaxLength="19" />
+          <Property Name="Birthdate" Type="datetime" />
+          <Property Name="DictRegisterID" Type="int" />
+          <Property Name="DictStuSourceID" Type="int" />
+          <Property Name="DictPoliticsStatusID" Type="int" />
+          <Property Name="TelephoneNum" Type="nchar" MaxLength="11" />
+          <Property Name="QQNum" Type="nvarchar" MaxLength="11" />
+          <Property Name="Specialty" Type="nvarchar" MaxLength="30" />
+          <Property Name="PersonalExperience" Type="nvarchar" MaxLength="200" />
+          <Property Name="SingleChild" Type="bit" />
+          <Property Name="SingleParent" Type="bit" />
+          <Property Name="DictFamilyOriginID" Type="int" />
+          <Property Name="FamilyAddress" Type="nvarchar" MaxLength="60" />
+          <Property Name="ZIPCode" Type="nvarchar" MaxLength="8" />
+          <Property Name="Photo" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="StuGradeIfoes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DictSemesterID" Type="int" />
+          <Property Name="StuID" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="CourseName" Type="int" />
+          <Property Name="CourseType" Type="int" />
+          <Property Name="Grade" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StuScheduleIfoes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="StuID" Type="nchar" MaxLength="10" />
+          <Property Name="OptionalID" Type="int" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TrainingTestIfoes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="StuID" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="TimeRankID" Type="int" Nullable="false" />
+          <Property Name="DictTerm" Type="int" />
+          <Property Name="Score" Type="int" />
+        </EntityType>
+        <EntityType Name="TrainTestTimeRankIfoes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Time" Type="datetime" />
+          <Property Name="Rank" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="UnionHonorIfoes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="10" />
+          <Property Name="Rank" Type="nchar" MaxLength="10" />
+          <Property Name="Details" Type="nvarchar" MaxLength="400" />
+        </EntityType>
+        <Association Name="FK_DepartmentIfo_DictPosition">
+          <End Role="DictPositions" Type="CIMASModel.Store.DictPositions" Multiplicity="0..1" />
+          <End Role="DepartmentIfoes" Type="CIMASModel.Store.DepartmentIfoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DictPositions">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DepartmentIfoes">
+              <PropertyRef Name="DictPositionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DepartmentIfo_DictSemester">
+          <End Role="DictSemesters" Type="CIMASModel.Store.DictSemesters" Multiplicity="0..1" />
+          <End Role="DepartmentIfoes" Type="CIMASModel.Store.DepartmentIfoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DictSemesters">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DepartmentIfoes">
+              <PropertyRef Name="DictSemesterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DictProfClass_DictProfName">
+          <End Role="DictProfNames" Type="CIMASModel.Store.DictProfNames" Multiplicity="0..1" />
+          <End Role="DictProfClasses" Type="CIMASModel.Store.DictProfClasses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DictProfNames">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DictProfClasses">
+              <PropertyRef Name="DictProfNameID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ImportantActivitiesIfo_DictActivity">
+          <End Role="DictActivities" Type="CIMASModel.Store.DictActivities" Multiplicity="1" />
+          <End Role="ImportantActivitiesIfoes" Type="CIMASModel.Store.ImportantActivitiesIfoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DictActivities">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ImportantActivitiesIfoes">
+              <PropertyRef Name="DictActivityNameID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OptionalCourseIfo_DictCoursePlace">
+          <End Role="DictCoursePlaces" Type="CIMASModel.Store.DictCoursePlaces" Multiplicity="0..1" />
+          <End Role="OptionalCourseIfoes" Type="CIMASModel.Store.OptionalCourseIfoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DictCoursePlaces">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OptionalCourseIfoes">
+              <PropertyRef Name="DictPlaceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OptionalCourseIfo_DictSemester">
+          <End Role="DictSemesters" Type="CIMASModel.Store.DictSemesters" Multiplicity="0..1" />
+          <End Role="OptionalCourseIfoes" Type="CIMASModel.Store.OptionalCourseIfoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DictSemesters">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OptionalCourseIfoes">
+              <PropertyRef Name="DictSemesterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RequiredCourseIfo_DictCoursePlace">
+          <End Role="DictCoursePlaces" Type="CIMASModel.Store.DictCoursePlaces" Multiplicity="0..1" />
+          <End Role="RequiredCourseIfoes" Type="CIMASModel.Store.RequiredCourseIfoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DictCoursePlaces">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RequiredCourseIfoes">
+              <PropertyRef Name="DictPlaceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RequiredCourseIfo_DictSemester">
+          <End Role="DictSemesters" Type="CIMASModel.Store.DictSemesters" Multiplicity="0..1" />
+          <End Role="RequiredCourseIfoes" Type="CIMASModel.Store.RequiredCourseIfoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DictSemesters">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RequiredCourseIfoes">
+              <PropertyRef Name="DictSemesterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RequiredCourseIfoes_DictProfClasses">
+          <End Role="DictProfClasses" Type="CIMASModel.Store.DictProfClasses" Multiplicity="0..1" />
+          <End Role="RequiredCourseIfoes" Type="CIMASModel.Store.RequiredCourseIfoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DictProfClasses">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RequiredCourseIfoes">
+              <PropertyRef Name="DictProfClassID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SocietyRelationIfo_DictPoliticsStatus">
+          <End Role="DictPoliticsStatus" Type="CIMASModel.Store.DictPoliticsStatus" Multiplicity="0..1" />
+          <End Role="SocietyRelationIfoes" Type="CIMASModel.Store.SocietyRelationIfoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DictPoliticsStatus">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SocietyRelationIfoes">
+              <PropertyRef Name="DictPoliticsStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SocietyRelationIfo_DictRelation">
+          <End Role="DictRelations" Type="CIMASModel.Store.DictRelations" Multiplicity="0..1" />
+          <End Role="SocietyRelationIfoes" Type="CIMASModel.Store.SocietyRelationIfoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DictRelations">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SocietyRelationIfoes">
+              <PropertyRef Name="DictRelationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StuBasicIfo_DictFamilyOrigin">
+          <End Role="DictFamilyOrigins" Type="CIMASModel.Store.DictFamilyOrigins" Multiplicity="0..1" />
+          <End Role="StuBasicIfoes" Type="CIMASModel.Store.StuBasicIfoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DictFamilyOrigins">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="StuBasicIfoes">
+              <PropertyRef Name="DictFamilyOriginID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StuBasicIfo_DictNation">
+          <End Role="DictNations" Type="CIMASModel.Store.DictNations" Multiplicity="0..1" />
+          <End Role="StuBasicIfoes" Type="CIMASModel.Store.StuBasicIfoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DictNations">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="StuBasicIfoes">
+              <PropertyRef Name="DictNationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StuBasicIfo_DictPoliticsStatus">
+          <End Role="DictPoliticsStatus" Type="CIMASModel.Store.DictPoliticsStatus" Multiplicity="0..1" />
+          <End Role="StuBasicIfoes" Type="CIMASModel.Store.StuBasicIfoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DictPoliticsStatus">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="StuBasicIfoes">
+              <PropertyRef Name="DictPoliticsStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StuBasicIfo_DictRegister">
+          <End Role="DictRegisters" Type="CIMASModel.Store.DictRegisters" Multiplicity="0..1" />
+          <End Role="StuBasicIfoes" Type="CIMASModel.Store.StuBasicIfoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DictRegisters">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="StuBasicIfoes">
+              <PropertyRef Name="DictRegisterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StuBasicIfo_DictStudentSource">
+          <End Role="DictStudentSources" Type="CIMASModel.Store.DictStudentSources" Multiplicity="0..1" />
+          <End Role="StuBasicIfoes" Type="CIMASModel.Store.StuBasicIfoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DictStudentSources">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="StuBasicIfoes">
+              <PropertyRef Name="DictStuSourceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StuBasicIfoes_DictProfClasses">
+          <End Role="DictProfClasses" Type="CIMASModel.Store.DictProfClasses" Multiplicity="0..1" />
+          <End Role="StuBasicIfoes" Type="CIMASModel.Store.StuBasicIfoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DictProfClasses">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="StuBasicIfoes">
+              <PropertyRef Name="DictProfClassID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StuGradeIfo_DictSemester">
+          <End Role="DictSemesters" Type="CIMASModel.Store.DictSemesters" Multiplicity="0..1" />
+          <End Role="StuGradeIfoes" Type="CIMASModel.Store.StuGradeIfoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DictSemesters">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="StuGradeIfoes">
+              <PropertyRef Name="DictSemesterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StuScheduleIfo_OptionalCourseIfo">
+          <End Role="OptionalCourseIfoes" Type="CIMASModel.Store.OptionalCourseIfoes" Multiplicity="0..1" />
+          <End Role="StuScheduleIfoes" Type="CIMASModel.Store.StuScheduleIfoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OptionalCourseIfoes">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="StuScheduleIfoes">
+              <PropertyRef Name="OptionalID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TrainingTestIfo_DictTerm">
+          <End Role="DictTerms" Type="CIMASModel.Store.DictTerms" Multiplicity="0..1" />
+          <End Role="TrainingTestIfoes" Type="CIMASModel.Store.TrainingTestIfoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DictTerms">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TrainingTestIfoes">
+              <PropertyRef Name="DictTerm" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TrainingTestIfo_TrainTestTimeRankIfo">
+          <End Role="TrainTestTimeRankIfoes" Type="CIMASModel.Store.TrainTestTimeRankIfoes" Multiplicity="1" />
+          <End Role="TrainingTestIfoes" Type="CIMASModel.Store.TrainingTestIfoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TrainTestTimeRankIfoes">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TrainingTestIfoes">
+              <PropertyRef Name="TimeRankID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CIMASModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="CIMASDbContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Accounts" EntityType="CIMASModel.Account" />
+          <EntitySet Name="AwardPunishmentIfoes" EntityType="CIMASModel.AwardPunishmentIfo" />
+          <EntitySet Name="CourseTimeIfoes" EntityType="CIMASModel.CourseTimeIfo" />
+          <EntitySet Name="DepartmentIfoes" EntityType="CIMASModel.DepartmentIfo" />
+          <EntitySet Name="DictActivities" EntityType="CIMASModel.DictActivity" />
+          <EntitySet Name="DictCoursePlaces" EntityType="CIMASModel.DictCoursePlace" />
+          <EntitySet Name="DictFamilyOrigins" EntityType="CIMASModel.DictFamilyOrigin" />
+          <EntitySet Name="DictNations" EntityType="CIMASModel.DictNation" />
+          <EntitySet Name="DictPoliticsStatus" EntityType="CIMASModel.DictPoliticsStatu" />
+          <EntitySet Name="DictPositions" EntityType="CIMASModel.DictPosition" />
+          <EntitySet Name="DictProfClasses" EntityType="CIMASModel.DictProfClass" />
+          <EntitySet Name="DictProfNames" EntityType="CIMASModel.DictProfName" />
+          <EntitySet Name="DictRegisters" EntityType="CIMASModel.DictRegister" />
+          <EntitySet Name="DictRelations" EntityType="CIMASModel.DictRelation" />
+          <EntitySet Name="DictSemesters" EntityType="CIMASModel.DictSemester" />
+          <EntitySet Name="DictStudentSources" EntityType="CIMASModel.DictStudentSource" />
+          <EntitySet Name="DictTerms" EntityType="CIMASModel.DictTerm" />
+          <EntitySet Name="HeightWeightIfoes" EntityType="CIMASModel.HeightWeightIfo" />
+          <EntitySet Name="ImportantActivitiesIfoes" EntityType="CIMASModel.ImportantActivitiesIfo" />
+          <EntitySet Name="InjureisIfoes" EntityType="CIMASModel.InjureisIfo" />
+          <EntitySet Name="OptionalCourseIfoes" EntityType="CIMASModel.OptionalCourseIfo" />
+          <EntitySet Name="RequiredCourseIfoes" EntityType="CIMASModel.RequiredCourseIfo" />
+          <EntitySet Name="Roles" EntityType="CIMASModel.Role" />
+          <EntitySet Name="SocietyRelationIfoes" EntityType="CIMASModel.SocietyRelationIfo" />
+          <EntitySet Name="StuBasicIfoes" EntityType="CIMASModel.StuBasicIfo" />
+          <EntitySet Name="StuGradeIfoes" EntityType="CIMASModel.StuGradeIfo" />
+          <EntitySet Name="StuScheduleIfoes" EntityType="CIMASModel.StuScheduleIfo" />
+          <EntitySet Name="sysdiagrams" EntityType="CIMASModel.sysdiagram" />
+          <EntitySet Name="TrainingTestIfoes" EntityType="CIMASModel.TrainingTestIfo" />
+          <EntitySet Name="TrainTestTimeRankIfoes" EntityType="CIMASModel.TrainTestTimeRankIfo" />
+          <EntitySet Name="UnionHonorIfoes" EntityType="CIMASModel.UnionHonorIfo" />
+          <AssociationSet Name="FK_DepartmentIfo_DictPosition" Association="CIMASModel.FK_DepartmentIfo_DictPosition">
+            <End Role="DictPosition" EntitySet="DictPositions" />
+            <End Role="DepartmentIfo" EntitySet="DepartmentIfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DepartmentIfo_DictSemester" Association="CIMASModel.FK_DepartmentIfo_DictSemester">
+            <End Role="DictSemester" EntitySet="DictSemesters" />
+            <End Role="DepartmentIfo" EntitySet="DepartmentIfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ImportantActivitiesIfo_DictActivity" Association="CIMASModel.FK_ImportantActivitiesIfo_DictActivity">
+            <End Role="DictActivity" EntitySet="DictActivities" />
+            <End Role="ImportantActivitiesIfo" EntitySet="ImportantActivitiesIfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OptionalCourseIfo_DictCoursePlace" Association="CIMASModel.FK_OptionalCourseIfo_DictCoursePlace">
+            <End Role="DictCoursePlace" EntitySet="DictCoursePlaces" />
+            <End Role="OptionalCourseIfo" EntitySet="OptionalCourseIfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RequiredCourseIfo_DictCoursePlace" Association="CIMASModel.FK_RequiredCourseIfo_DictCoursePlace">
+            <End Role="DictCoursePlace" EntitySet="DictCoursePlaces" />
+            <End Role="RequiredCourseIfo" EntitySet="RequiredCourseIfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StuBasicIfo_DictFamilyOrigin" Association="CIMASModel.FK_StuBasicIfo_DictFamilyOrigin">
+            <End Role="DictFamilyOrigin" EntitySet="DictFamilyOrigins" />
+            <End Role="StuBasicIfo" EntitySet="StuBasicIfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StuBasicIfo_DictNation" Association="CIMASModel.FK_StuBasicIfo_DictNation">
+            <End Role="DictNation" EntitySet="DictNations" />
+            <End Role="StuBasicIfo" EntitySet="StuBasicIfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SocietyRelationIfo_DictPoliticsStatus" Association="CIMASModel.FK_SocietyRelationIfo_DictPoliticsStatus">
+            <End Role="DictPoliticsStatu" EntitySet="DictPoliticsStatus" />
+            <End Role="SocietyRelationIfo" EntitySet="SocietyRelationIfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StuBasicIfo_DictPoliticsStatus" Association="CIMASModel.FK_StuBasicIfo_DictPoliticsStatus">
+            <End Role="DictPoliticsStatu" EntitySet="DictPoliticsStatus" />
+            <End Role="StuBasicIfo" EntitySet="StuBasicIfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DictProfClass_DictProfName" Association="CIMASModel.FK_DictProfClass_DictProfName">
+            <End Role="DictProfName" EntitySet="DictProfNames" />
+            <End Role="DictProfClass" EntitySet="DictProfClasses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RequiredCourseIfoes_DictProfClasses" Association="CIMASModel.FK_RequiredCourseIfoes_DictProfClasses">
+            <End Role="DictProfClass" EntitySet="DictProfClasses" />
+            <End Role="RequiredCourseIfo" EntitySet="RequiredCourseIfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StuBasicIfoes_DictProfClasses" Association="CIMASModel.FK_StuBasicIfoes_DictProfClasses">
+            <End Role="DictProfClass" EntitySet="DictProfClasses" />
+            <End Role="StuBasicIfo" EntitySet="StuBasicIfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StuBasicIfo_DictRegister" Association="CIMASModel.FK_StuBasicIfo_DictRegister">
+            <End Role="DictRegister" EntitySet="DictRegisters" />
+            <End Role="StuBasicIfo" EntitySet="StuBasicIfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SocietyRelationIfo_DictRelation" Association="CIMASModel.FK_SocietyRelationIfo_DictRelation">
+            <End Role="DictRelation" EntitySet="DictRelations" />
+            <End Role="SocietyRelationIfo" EntitySet="SocietyRelationIfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OptionalCourseIfo_DictSemester" Association="CIMASModel.FK_OptionalCourseIfo_DictSemester">
+            <End Role="DictSemester" EntitySet="DictSemesters" />
+            <End Role="OptionalCourseIfo" EntitySet="OptionalCourseIfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RequiredCourseIfo_DictSemester" Association="CIMASModel.FK_RequiredCourseIfo_DictSemester">
+            <End Role="DictSemester" EntitySet="DictSemesters" />
+            <End Role="RequiredCourseIfo" EntitySet="RequiredCourseIfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StuGradeIfo_DictSemester" Association="CIMASModel.FK_StuGradeIfo_DictSemester">
+            <End Role="DictSemester" EntitySet="DictSemesters" />
+            <End Role="StuGradeIfo" EntitySet="StuGradeIfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StuBasicIfo_DictStudentSource" Association="CIMASModel.FK_StuBasicIfo_DictStudentSource">
+            <End Role="DictStudentSource" EntitySet="DictStudentSources" />
+            <End Role="StuBasicIfo" EntitySet="StuBasicIfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TrainingTestIfo_DictTerm" Association="CIMASModel.FK_TrainingTestIfo_DictTerm">
+            <End Role="DictTerm" EntitySet="DictTerms" />
+            <End Role="TrainingTestIfo" EntitySet="TrainingTestIfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StuScheduleIfo_OptionalCourseIfo" Association="CIMASModel.FK_StuScheduleIfo_OptionalCourseIfo">
+            <End Role="OptionalCourseIfo" EntitySet="OptionalCourseIfoes" />
+            <End Role="StuScheduleIfo" EntitySet="StuScheduleIfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TrainingTestIfo_TrainTestTimeRankIfo" Association="CIMASModel.FK_TrainingTestIfo_TrainTestTimeRankIfo">
+            <End Role="TrainTestTimeRankIfo" EntitySet="TrainTestTimeRankIfoes" />
+            <End Role="TrainingTestIfo" EntitySet="TrainingTestIfoes" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="UserName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="TureName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Password" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="AwardPunishmentIfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="StuID" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="Boolean" Name="AorP" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="Time" Nullable="false" Precision="3" />
+          <Property Type="String" Name="Rank" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Details" MaxLength="130" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CourseTimeIfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="XingQi" />
+          <Property Type="Int32" Name="JIE" />
+          <Property Type="Int32" Name="StartWeek" />
+          <Property Type="Int32" Name="EndWeek" />
+        </EntityType>
+        <EntityType Name="DepartmentIfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="DictSemesterID" />
+          <Property Type="String" Name="StuId" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Company" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Platoon" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Squad" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="Int32" Name="DictPositionID" />
+          <NavigationProperty Name="DictPosition" Relationship="CIMASModel.FK_DepartmentIfo_DictPosition" FromRole="DepartmentIfo" ToRole="DictPosition" />
+          <NavigationProperty Name="DictSemester" Relationship="CIMASModel.FK_DepartmentIfo_DictSemester" FromRole="DepartmentIfo" ToRole="DictSemester" />
+        </EntityType>
+        <EntityType Name="DictActivity">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ImportantActivitiesIfoes" Relationship="CIMASModel.FK_ImportantActivitiesIfo_DictActivity" FromRole="DictActivity" ToRole="ImportantActivitiesIfo" />
+        </EntityType>
+        <EntityType Name="DictCoursePlace">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Place" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="OptionalCourseIfoes" Relationship="CIMASModel.FK_OptionalCourseIfo_DictCoursePlace" FromRole="DictCoursePlace" ToRole="OptionalCourseIfo" />
+          <NavigationProperty Name="RequiredCourseIfoes" Relationship="CIMASModel.FK_RequiredCourseIfo_DictCoursePlace" FromRole="DictCoursePlace" ToRole="RequiredCourseIfo" />
+        </EntityType>
+        <EntityType Name="DictFamilyOrigin">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Type" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="StuBasicIfoes" Relationship="CIMASModel.FK_StuBasicIfo_DictFamilyOrigin" FromRole="DictFamilyOrigin" ToRole="StuBasicIfo" />
+        </EntityType>
+        <EntityType Name="DictNation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="StuBasicIfoes" Relationship="CIMASModel.FK_StuBasicIfo_DictNation" FromRole="DictNation" ToRole="StuBasicIfo" />
+        </EntityType>
+        <EntityType Name="DictPoliticsStatu">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Type" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="SocietyRelationIfoes" Relationship="CIMASModel.FK_SocietyRelationIfo_DictPoliticsStatus" FromRole="DictPoliticsStatu" ToRole="SocietyRelationIfo" />
+          <NavigationProperty Name="StuBasicIfoes" Relationship="CIMASModel.FK_StuBasicIfo_DictPoliticsStatus" FromRole="DictPoliticsStatu" ToRole="StuBasicIfo" />
+        </EntityType>
+        <EntityType Name="DictPosition">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="PositionName" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DepartmentIfoes" Relationship="CIMASModel.FK_DepartmentIfo_DictPosition" FromRole="DictPosition" ToRole="DepartmentIfo" />
+        </EntityType>
+        <EntityType Name="DictProfClass">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="EntranceYear" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Type="Int32" Name="DictProfNameID" />
+          <Property Type="String" Name="ClassCode" MaxLength="10" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="DictProfName" Relationship="CIMASModel.FK_DictProfClass_DictProfName" FromRole="DictProfClass" ToRole="DictProfName" />
+          <NavigationProperty Name="RequiredCourseIfoes" Relationship="CIMASModel.FK_RequiredCourseIfoes_DictProfClasses" FromRole="DictProfClass" ToRole="RequiredCourseIfo" />
+          <NavigationProperty Name="StuBasicIfoes" Relationship="CIMASModel.FK_StuBasicIfoes_DictProfClasses" FromRole="DictProfClass" ToRole="StuBasicIfo" />
+        </EntityType>
+        <EntityType Name="DictProfName">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" MaxLength="15" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DictProfClasses" Relationship="CIMASModel.FK_DictProfClass_DictProfName" FromRole="DictProfName" ToRole="DictProfClass" />
+        </EntityType>
+        <EntityType Name="DictRegister">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Type" MaxLength="4" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="StuBasicIfoes" Relationship="CIMASModel.FK_StuBasicIfo_DictRegister" FromRole="DictRegister" ToRole="StuBasicIfo" />
+        </EntityType>
+        <EntityType Name="DictRelation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Type" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="SocietyRelationIfoes" Relationship="CIMASModel.FK_SocietyRelationIfo_DictRelation" FromRole="DictRelation" ToRole="SocietyRelationIfo" />
+        </EntityType>
+        <EntityType Name="DictSemester">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Type="DateTime" Name="StartDay" Precision="3" />
+          <Property Type="DateTime" Name="EndTime" Precision="3" />
+          <NavigationProperty Name="DepartmentIfoes" Relationship="CIMASModel.FK_DepartmentIfo_DictSemester" FromRole="DictSemester" ToRole="DepartmentIfo" />
+          <NavigationProperty Name="OptionalCourseIfoes" Relationship="CIMASModel.FK_OptionalCourseIfo_DictSemester" FromRole="DictSemester" ToRole="OptionalCourseIfo" />
+          <NavigationProperty Name="RequiredCourseIfoes" Relationship="CIMASModel.FK_RequiredCourseIfo_DictSemester" FromRole="DictSemester" ToRole="RequiredCourseIfo" />
+          <NavigationProperty Name="StuGradeIfoes" Relationship="CIMASModel.FK_StuGradeIfo_DictSemester" FromRole="DictSemester" ToRole="StuGradeIfo" />
+        </EntityType>
+        <EntityType Name="DictStudentSource">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Type" MaxLength="4" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="StuBasicIfoes" Relationship="CIMASModel.FK_StuBasicIfo_DictStudentSource" FromRole="DictStudentSource" ToRole="StuBasicIfo" />
+        </EntityType>
+        <EntityType Name="DictTerm">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Term" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TrainingTestIfoes" Relationship="CIMASModel.FK_TrainingTestIfo_DictTerm" FromRole="DictTerm" ToRole="TrainingTestIfo" />
+        </EntityType>
+        <EntityType Name="HeightWeightIfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="StuID" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="DateTime" Name="Time" Precision="3" />
+          <Property Type="Double" Name="Height" />
+          <Property Type="Double" Name="Weight" />
+        </EntityType>
+        <EntityType Name="ImportantActivitiesIfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="StuID" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="DateTime" Name="Time" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="DictActivityNameID" Nullable="false" />
+          <Property Type="String" Name="Details" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Position" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DictActivity" Relationship="CIMASModel.FK_ImportantActivitiesIfo_DictActivity" FromRole="ImportantActivitiesIfo" ToRole="DictActivity" />
+        </EntityType>
+        <EntityType Name="InjureisIfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="StuID" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Position" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="InjuresTime" Nullable="false" Precision="3" />
+          <Property Type="String" Name="RecoverOrNot" Nullable="false" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Details" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="RecoverTime" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="OptionalCourseIfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="DictSemesterID" />
+          <Property Type="Int32" Name="CourseTimeID" />
+          <Property Type="Int32" Name="DictPlaceID" />
+          <Property Type="String" Name="Weeks" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="Int32" Name="DictProfClassID" />
+          <NavigationProperty Name="DictCoursePlace" Relationship="CIMASModel.FK_OptionalCourseIfo_DictCoursePlace" FromRole="OptionalCourseIfo" ToRole="DictCoursePlace" />
+          <NavigationProperty Name="DictSemester" Relationship="CIMASModel.FK_OptionalCourseIfo_DictSemester" FromRole="OptionalCourseIfo" ToRole="DictSemester" />
+          <NavigationProperty Name="StuScheduleIfoes" Relationship="CIMASModel.FK_StuScheduleIfo_OptionalCourseIfo" FromRole="OptionalCourseIfo" ToRole="StuScheduleIfo" />
+        </EntityType>
+        <EntityType Name="RequiredCourseIfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="DictSemesterID" />
+          <Property Type="Int32" Name="DictProfClassID" />
+          <Property Type="String" Name="Name" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="DictPlaceID" />
+          <NavigationProperty Name="DictCoursePlace" Relationship="CIMASModel.FK_RequiredCourseIfo_DictCoursePlace" FromRole="RequiredCourseIfo" ToRole="DictCoursePlace" />
+          <NavigationProperty Name="DictProfClass" Relationship="CIMASModel.FK_RequiredCourseIfoes_DictProfClasses" FromRole="RequiredCourseIfo" ToRole="DictProfClass" />
+          <NavigationProperty Name="DictSemester" Relationship="CIMASModel.FK_RequiredCourseIfo_DictSemester" FromRole="RequiredCourseIfo" ToRole="DictSemester" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SocietyRelationIfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="StuID" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Name" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="DictRelationID" />
+          <Property Type="String" Name="WorkPlace" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Position" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TEL" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="DictPoliticsStatusID" />
+          <NavigationProperty Name="DictPoliticsStatu" Relationship="CIMASModel.FK_SocietyRelationIfo_DictPoliticsStatus" FromRole="SocietyRelationIfo" ToRole="DictPoliticsStatu" />
+          <NavigationProperty Name="DictRelation" Relationship="CIMASModel.FK_SocietyRelationIfo_DictRelation" FromRole="SocietyRelationIfo" ToRole="DictRelation" />
+        </EntityType>
+        <EntityType Name="StuBasicIfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Sex" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="StuCode" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="Int32" Name="DictProfClassID" />
+          <Property Type="Int32" Name="DictNationID" />
+          <Property Type="String" Name="BirthPlace" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="IDCardNumber" MaxLength="19" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="Birthdate" Precision="3" />
+          <Property Type="Int32" Name="DictRegisterID" />
+          <Property Type="Int32" Name="DictStuSourceID" />
+          <Property Type="Int32" Name="DictPoliticsStatusID" />
+          <Property Type="String" Name="TelephoneNum" MaxLength="11" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="QQNum" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Specialty" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PersonalExperience" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="SingleChild" />
+          <Property Type="Boolean" Name="SingleParent" />
+          <Property Type="Int32" Name="DictFamilyOriginID" />
+          <Property Type="String" Name="FamilyAddress" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ZIPCode" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Type="Binary" Name="Photo" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="DictFamilyOrigin" Relationship="CIMASModel.FK_StuBasicIfo_DictFamilyOrigin" FromRole="StuBasicIfo" ToRole="DictFamilyOrigin" />
+          <NavigationProperty Name="DictNation" Relationship="CIMASModel.FK_StuBasicIfo_DictNation" FromRole="StuBasicIfo" ToRole="DictNation" />
+          <NavigationProperty Name="DictPoliticsStatu" Relationship="CIMASModel.FK_StuBasicIfo_DictPoliticsStatus" FromRole="StuBasicIfo" ToRole="DictPoliticsStatu" />
+          <NavigationProperty Name="DictProfClass" Relationship="CIMASModel.FK_StuBasicIfoes_DictProfClasses" FromRole="StuBasicIfo" ToRole="DictProfClass" />
+          <NavigationProperty Name="DictRegister" Relationship="CIMASModel.FK_StuBasicIfo_DictRegister" FromRole="StuBasicIfo" ToRole="DictRegister" />
+          <NavigationProperty Name="DictStudentSource" Relationship="CIMASModel.FK_StuBasicIfo_DictStudentSource" FromRole="StuBasicIfo" ToRole="DictStudentSource" />
+        </EntityType>
+        <EntityType Name="StuGradeIfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="DictSemesterID" />
+          <Property Type="String" Name="StuID" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="Int32" Name="CourseName" />
+          <Property Type="Int32" Name="CourseType" />
+          <Property Type="Int32" Name="Grade" Nullable="false" />
+          <NavigationProperty Name="DictSemester" Relationship="CIMASModel.FK_StuGradeIfo_DictSemester" FromRole="StuGradeIfo" ToRole="DictSemester" />
+        </EntityType>
+        <EntityType Name="StuScheduleIfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="StuID" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="Int32" Name="OptionalID" />
+          <NavigationProperty Name="OptionalCourseIfo" Relationship="CIMASModel.FK_StuScheduleIfo_OptionalCourseIfo" FromRole="StuScheduleIfo" ToRole="OptionalCourseIfo" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Type="String" Name="name" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="principal_id" Nullable="false" />
+          <Property Type="Int32" Name="diagram_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="version" />
+          <Property Type="Binary" Name="definition" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TrainingTestIfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="StuID" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="Int32" Name="TimeRankID" Nullable="false" />
+          <Property Type="Int32" Name="DictTerm" />
+          <Property Type="Int32" Name="Score" />
+          <NavigationProperty Name="DictTerm1" Relationship="CIMASModel.FK_TrainingTestIfo_DictTerm" FromRole="TrainingTestIfo" ToRole="DictTerm" />
+          <NavigationProperty Name="TrainTestTimeRankIfo" Relationship="CIMASModel.FK_TrainingTestIfo_TrainTestTimeRankIfo" FromRole="TrainingTestIfo" ToRole="TrainTestTimeRankIfo" />
+        </EntityType>
+        <EntityType Name="TrainTestTimeRankIfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="Time" Precision="3" />
+          <Property Type="String" Name="Rank" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TrainingTestIfoes" Relationship="CIMASModel.FK_TrainingTestIfo_TrainTestTimeRankIfo" FromRole="TrainTestTimeRankIfo" ToRole="TrainingTestIfo" />
+        </EntityType>
+        <EntityType Name="UnionHonorIfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Name" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Rank" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Details" MaxLength="400" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_DepartmentIfo_DictPosition">
+          <End Type="CIMASModel.DictPosition" Role="DictPosition" Multiplicity="0..1" />
+          <End Type="CIMASModel.DepartmentIfo" Role="DepartmentIfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DictPosition">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DepartmentIfo">
+              <PropertyRef Name="DictPositionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DepartmentIfo_DictSemester">
+          <End Type="CIMASModel.DictSemester" Role="DictSemester" Multiplicity="0..1" />
+          <End Type="CIMASModel.DepartmentIfo" Role="DepartmentIfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DictSemester">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DepartmentIfo">
+              <PropertyRef Name="DictSemesterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ImportantActivitiesIfo_DictActivity">
+          <End Type="CIMASModel.DictActivity" Role="DictActivity" Multiplicity="1" />
+          <End Type="CIMASModel.ImportantActivitiesIfo" Role="ImportantActivitiesIfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DictActivity">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ImportantActivitiesIfo">
+              <PropertyRef Name="DictActivityNameID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OptionalCourseIfo_DictCoursePlace">
+          <End Type="CIMASModel.DictCoursePlace" Role="DictCoursePlace" Multiplicity="0..1" />
+          <End Type="CIMASModel.OptionalCourseIfo" Role="OptionalCourseIfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DictCoursePlace">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OptionalCourseIfo">
+              <PropertyRef Name="DictPlaceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RequiredCourseIfo_DictCoursePlace">
+          <End Type="CIMASModel.DictCoursePlace" Role="DictCoursePlace" Multiplicity="0..1" />
+          <End Type="CIMASModel.RequiredCourseIfo" Role="RequiredCourseIfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DictCoursePlace">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RequiredCourseIfo">
+              <PropertyRef Name="DictPlaceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StuBasicIfo_DictFamilyOrigin">
+          <End Type="CIMASModel.DictFamilyOrigin" Role="DictFamilyOrigin" Multiplicity="0..1" />
+          <End Type="CIMASModel.StuBasicIfo" Role="StuBasicIfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DictFamilyOrigin">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="StuBasicIfo">
+              <PropertyRef Name="DictFamilyOriginID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StuBasicIfo_DictNation">
+          <End Type="CIMASModel.DictNation" Role="DictNation" Multiplicity="0..1" />
+          <End Type="CIMASModel.StuBasicIfo" Role="StuBasicIfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DictNation">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="StuBasicIfo">
+              <PropertyRef Name="DictNationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SocietyRelationIfo_DictPoliticsStatus">
+          <End Type="CIMASModel.DictPoliticsStatu" Role="DictPoliticsStatu" Multiplicity="0..1" />
+          <End Type="CIMASModel.SocietyRelationIfo" Role="SocietyRelationIfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DictPoliticsStatu">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SocietyRelationIfo">
+              <PropertyRef Name="DictPoliticsStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StuBasicIfo_DictPoliticsStatus">
+          <End Type="CIMASModel.DictPoliticsStatu" Role="DictPoliticsStatu" Multiplicity="0..1" />
+          <End Type="CIMASModel.StuBasicIfo" Role="StuBasicIfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DictPoliticsStatu">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="StuBasicIfo">
+              <PropertyRef Name="DictPoliticsStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DictProfClass_DictProfName">
+          <End Type="CIMASModel.DictProfName" Role="DictProfName" Multiplicity="0..1" />
+          <End Type="CIMASModel.DictProfClass" Role="DictProfClass" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DictProfName">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DictProfClass">
+              <PropertyRef Name="DictProfNameID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RequiredCourseIfoes_DictProfClasses">
+          <End Type="CIMASModel.DictProfClass" Role="DictProfClass" Multiplicity="0..1" />
+          <End Type="CIMASModel.RequiredCourseIfo" Role="RequiredCourseIfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DictProfClass">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RequiredCourseIfo">
+              <PropertyRef Name="DictProfClassID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StuBasicIfoes_DictProfClasses">
+          <End Type="CIMASModel.DictProfClass" Role="DictProfClass" Multiplicity="0..1" />
+          <End Type="CIMASModel.StuBasicIfo" Role="StuBasicIfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DictProfClass">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="StuBasicIfo">
+              <PropertyRef Name="DictProfClassID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StuBasicIfo_DictRegister">
+          <End Type="CIMASModel.DictRegister" Role="DictRegister" Multiplicity="0..1" />
+          <End Type="CIMASModel.StuBasicIfo" Role="StuBasicIfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DictRegister">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="StuBasicIfo">
+              <PropertyRef Name="DictRegisterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SocietyRelationIfo_DictRelation">
+          <End Type="CIMASModel.DictRelation" Role="DictRelation" Multiplicity="0..1" />
+          <End Type="CIMASModel.SocietyRelationIfo" Role="SocietyRelationIfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DictRelation">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SocietyRelationIfo">
+              <PropertyRef Name="DictRelationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OptionalCourseIfo_DictSemester">
+          <End Type="CIMASModel.DictSemester" Role="DictSemester" Multiplicity="0..1" />
+          <End Type="CIMASModel.OptionalCourseIfo" Role="OptionalCourseIfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DictSemester">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OptionalCourseIfo">
+              <PropertyRef Name="DictSemesterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RequiredCourseIfo_DictSemester">
+          <End Type="CIMASModel.DictSemester" Role="DictSemester" Multiplicity="0..1" />
+          <End Type="CIMASModel.RequiredCourseIfo" Role="RequiredCourseIfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DictSemester">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RequiredCourseIfo">
+              <PropertyRef Name="DictSemesterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StuGradeIfo_DictSemester">
+          <End Type="CIMASModel.DictSemester" Role="DictSemester" Multiplicity="0..1" />
+          <End Type="CIMASModel.StuGradeIfo" Role="StuGradeIfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DictSemester">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="StuGradeIfo">
+              <PropertyRef Name="DictSemesterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StuBasicIfo_DictStudentSource">
+          <End Type="CIMASModel.DictStudentSource" Role="DictStudentSource" Multiplicity="0..1" />
+          <End Type="CIMASModel.StuBasicIfo" Role="StuBasicIfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DictStudentSource">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="StuBasicIfo">
+              <PropertyRef Name="DictStuSourceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TrainingTestIfo_DictTerm">
+          <End Type="CIMASModel.DictTerm" Role="DictTerm" Multiplicity="0..1" />
+          <End Type="CIMASModel.TrainingTestIfo" Role="TrainingTestIfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DictTerm">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TrainingTestIfo">
+              <PropertyRef Name="DictTerm" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StuScheduleIfo_OptionalCourseIfo">
+          <End Type="CIMASModel.OptionalCourseIfo" Role="OptionalCourseIfo" Multiplicity="0..1" />
+          <End Type="CIMASModel.StuScheduleIfo" Role="StuScheduleIfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OptionalCourseIfo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="StuScheduleIfo">
+              <PropertyRef Name="OptionalID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TrainingTestIfo_TrainTestTimeRankIfo">
+          <End Type="CIMASModel.TrainTestTimeRankIfo" Role="TrainTestTimeRankIfo" Multiplicity="1" />
+          <End Type="CIMASModel.TrainingTestIfo" Role="TrainingTestIfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TrainTestTimeRankIfo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TrainingTestIfo">
+              <PropertyRef Name="TimeRankID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CIMASModelStoreContainer" CdmEntityContainer="CIMASDbContext">
+          <EntitySetMapping Name="Accounts">
+            <EntityTypeMapping TypeName="CIMASModel.Account">
+              <MappingFragment StoreEntitySet="Accounts">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="TureName" ColumnName="TureName" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AwardPunishmentIfoes">
+            <EntityTypeMapping TypeName="CIMASModel.AwardPunishmentIfo">
+              <MappingFragment StoreEntitySet="AwardPunishmentIfoes">
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="Rank" ColumnName="Rank" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="AorP" ColumnName="AorP" />
+                <ScalarProperty Name="StuID" ColumnName="StuID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CourseTimeIfoes">
+            <EntityTypeMapping TypeName="CIMASModel.CourseTimeIfo">
+              <MappingFragment StoreEntitySet="CourseTimeIfoes">
+                <ScalarProperty Name="EndWeek" ColumnName="EndWeek" />
+                <ScalarProperty Name="StartWeek" ColumnName="StartWeek" />
+                <ScalarProperty Name="JIE" ColumnName="JIE" />
+                <ScalarProperty Name="XingQi" ColumnName="XingQi" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DepartmentIfoes">
+            <EntityTypeMapping TypeName="CIMASModel.DepartmentIfo">
+              <MappingFragment StoreEntitySet="DepartmentIfoes">
+                <ScalarProperty Name="DictPositionID" ColumnName="DictPositionID" />
+                <ScalarProperty Name="Squad" ColumnName="Squad" />
+                <ScalarProperty Name="Platoon" ColumnName="Platoon" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="StuId" ColumnName="StuId" />
+                <ScalarProperty Name="DictSemesterID" ColumnName="DictSemesterID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DictActivities">
+            <EntityTypeMapping TypeName="CIMASModel.DictActivity">
+              <MappingFragment StoreEntitySet="DictActivities">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DictCoursePlaces">
+            <EntityTypeMapping TypeName="CIMASModel.DictCoursePlace">
+              <MappingFragment StoreEntitySet="DictCoursePlaces">
+                <ScalarProperty Name="Place" ColumnName="Place" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DictFamilyOrigins">
+            <EntityTypeMapping TypeName="CIMASModel.DictFamilyOrigin">
+              <MappingFragment StoreEntitySet="DictFamilyOrigins">
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DictNations">
+            <EntityTypeMapping TypeName="CIMASModel.DictNation">
+              <MappingFragment StoreEntitySet="DictNations">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DictPoliticsStatus">
+            <EntityTypeMapping TypeName="CIMASModel.DictPoliticsStatu">
+              <MappingFragment StoreEntitySet="DictPoliticsStatus">
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DictPositions">
+            <EntityTypeMapping TypeName="CIMASModel.DictPosition">
+              <MappingFragment StoreEntitySet="DictPositions">
+                <ScalarProperty Name="PositionName" ColumnName="PositionName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DictProfClasses">
+            <EntityTypeMapping TypeName="CIMASModel.DictProfClass">
+              <MappingFragment StoreEntitySet="DictProfClasses">
+                <ScalarProperty Name="ClassCode" ColumnName="ClassCode" />
+                <ScalarProperty Name="DictProfNameID" ColumnName="DictProfNameID" />
+                <ScalarProperty Name="EntranceYear" ColumnName="EntranceYear" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DictProfNames">
+            <EntityTypeMapping TypeName="CIMASModel.DictProfName">
+              <MappingFragment StoreEntitySet="DictProfNames">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DictRegisters">
+            <EntityTypeMapping TypeName="CIMASModel.DictRegister">
+              <MappingFragment StoreEntitySet="DictRegisters">
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DictRelations">
+            <EntityTypeMapping TypeName="CIMASModel.DictRelation">
+              <MappingFragment StoreEntitySet="DictRelations">
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DictSemesters">
+            <EntityTypeMapping TypeName="CIMASModel.DictSemester">
+              <MappingFragment StoreEntitySet="DictSemesters">
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="StartDay" ColumnName="StartDay" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DictStudentSources">
+            <EntityTypeMapping TypeName="CIMASModel.DictStudentSource">
+              <MappingFragment StoreEntitySet="DictStudentSources">
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DictTerms">
+            <EntityTypeMapping TypeName="CIMASModel.DictTerm">
+              <MappingFragment StoreEntitySet="DictTerms">
+                <ScalarProperty Name="Term" ColumnName="Term" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HeightWeightIfoes">
+            <EntityTypeMapping TypeName="CIMASModel.HeightWeightIfo">
+              <MappingFragment StoreEntitySet="HeightWeightIfoes">
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="StuID" ColumnName="StuID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ImportantActivitiesIfoes">
+            <EntityTypeMapping TypeName="CIMASModel.ImportantActivitiesIfo">
+              <MappingFragment StoreEntitySet="ImportantActivitiesIfoes">
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="DictActivityNameID" ColumnName="DictActivityNameID" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="StuID" ColumnName="StuID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InjureisIfoes">
+            <EntityTypeMapping TypeName="CIMASModel.InjureisIfo">
+              <MappingFragment StoreEntitySet="InjureisIfoes">
+                <ScalarProperty Name="RecoverTime" ColumnName="RecoverTime" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="RecoverOrNot" ColumnName="RecoverOrNot" />
+                <ScalarProperty Name="InjuresTime" ColumnName="InjuresTime" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="StuID" ColumnName="StuID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OptionalCourseIfoes">
+            <EntityTypeMapping TypeName="CIMASModel.OptionalCourseIfo">
+              <MappingFragment StoreEntitySet="OptionalCourseIfoes">
+                <ScalarProperty Name="DictProfClassID" ColumnName="DictProfClassID" />
+                <ScalarProperty Name="Weeks" ColumnName="Weeks" />
+                <ScalarProperty Name="DictPlaceID" ColumnName="DictPlaceID" />
+                <ScalarProperty Name="CourseTimeID" ColumnName="CourseTimeID" />
+                <ScalarProperty Name="DictSemesterID" ColumnName="DictSemesterID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RequiredCourseIfoes">
+            <EntityTypeMapping TypeName="CIMASModel.RequiredCourseIfo">
+              <MappingFragment StoreEntitySet="RequiredCourseIfoes">
+                <ScalarProperty Name="DictPlaceID" ColumnName="DictPlaceID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="DictProfClassID" ColumnName="DictProfClassID" />
+                <ScalarProperty Name="DictSemesterID" ColumnName="DictSemesterID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="CIMASModel.Role">
+              <MappingFragment StoreEntitySet="Roles">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SocietyRelationIfoes">
+            <EntityTypeMapping TypeName="CIMASModel.SocietyRelationIfo">
+              <MappingFragment StoreEntitySet="SocietyRelationIfoes">
+                <ScalarProperty Name="DictPoliticsStatusID" ColumnName="DictPoliticsStatusID" />
+                <ScalarProperty Name="TEL" ColumnName="TEL" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="WorkPlace" ColumnName="WorkPlace" />
+                <ScalarProperty Name="DictRelationID" ColumnName="DictRelationID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="StuID" ColumnName="StuID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StuBasicIfoes">
+            <EntityTypeMapping TypeName="CIMASModel.StuBasicIfo">
+              <MappingFragment StoreEntitySet="StuBasicIfoes">
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="ZIPCode" ColumnName="ZIPCode" />
+                <ScalarProperty Name="FamilyAddress" ColumnName="FamilyAddress" />
+                <ScalarProperty Name="DictFamilyOriginID" ColumnName="DictFamilyOriginID" />
+                <ScalarProperty Name="SingleParent" ColumnName="SingleParent" />
+                <ScalarProperty Name="SingleChild" ColumnName="SingleChild" />
+                <ScalarProperty Name="PersonalExperience" ColumnName="PersonalExperience" />
+                <ScalarProperty Name="Specialty" ColumnName="Specialty" />
+                <ScalarProperty Name="QQNum" ColumnName="QQNum" />
+                <ScalarProperty Name="TelephoneNum" ColumnName="TelephoneNum" />
+                <ScalarProperty Name="DictPoliticsStatusID" ColumnName="DictPoliticsStatusID" />
+                <ScalarProperty Name="DictStuSourceID" ColumnName="DictStuSourceID" />
+                <ScalarProperty Name="DictRegisterID" ColumnName="DictRegisterID" />
+                <ScalarProperty Name="Birthdate" ColumnName="Birthdate" />
+                <ScalarProperty Name="IDCardNumber" ColumnName="IDCardNumber" />
+                <ScalarProperty Name="BirthPlace" ColumnName="BirthPlace" />
+                <ScalarProperty Name="DictNationID" ColumnName="DictNationID" />
+                <ScalarProperty Name="DictProfClassID" ColumnName="DictProfClassID" />
+                <ScalarProperty Name="StuCode" ColumnName="StuCode" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StuGradeIfoes">
+            <EntityTypeMapping TypeName="CIMASModel.StuGradeIfo">
+              <MappingFragment StoreEntitySet="StuGradeIfoes">
+                <ScalarProperty Name="Grade" ColumnName="Grade" />
+                <ScalarProperty Name="CourseType" ColumnName="CourseType" />
+                <ScalarProperty Name="CourseName" ColumnName="CourseName" />
+                <ScalarProperty Name="StuID" ColumnName="StuID" />
+                <ScalarProperty Name="DictSemesterID" ColumnName="DictSemesterID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StuScheduleIfoes">
+            <EntityTypeMapping TypeName="CIMASModel.StuScheduleIfo">
+              <MappingFragment StoreEntitySet="StuScheduleIfoes">
+                <ScalarProperty Name="OptionalID" ColumnName="OptionalID" />
+                <ScalarProperty Name="StuID" ColumnName="StuID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="CIMASModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TrainingTestIfoes">
+            <EntityTypeMapping TypeName="CIMASModel.TrainingTestIfo">
+              <MappingFragment StoreEntitySet="TrainingTestIfoes">
+                <ScalarProperty Name="Score" ColumnName="Score" />
+                <ScalarProperty Name="DictTerm" ColumnName="DictTerm" />
+                <ScalarProperty Name="TimeRankID" ColumnName="TimeRankID" />
+                <ScalarProperty Name="StuID" ColumnName="StuID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TrainTestTimeRankIfoes">
+            <EntityTypeMapping TypeName="CIMASModel.TrainTestTimeRankIfo">
+              <MappingFragment StoreEntitySet="TrainTestTimeRankIfoes">
+                <ScalarProperty Name="Rank" ColumnName="Rank" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UnionHonorIfoes">
+            <EntityTypeMapping TypeName="CIMASModel.UnionHonorIfo">
+              <MappingFragment StoreEntitySet="UnionHonorIfoes">
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="Rank" ColumnName="Rank" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

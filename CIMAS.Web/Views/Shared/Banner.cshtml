@@ -1,0 +1,12 @@
+﻿
+<a href="../Home/Index">
+    <div class="logo_h">
+        <img src="@Url.Content("~/Content/images/biz_back_logo.jpg")"  alt="进入新闻首页" /></div>
+</a>
+<!-- -->
+<div class="f_ceng">
+    <p>
+        <span style="font-weight: normal; padding-top: 5px; font-size: 12px;">
+            @{Html.RenderAction("UserInfo", "Home");}
+        </span><a href="#">首 页</a><a href="#">修改密码</a><a href="~/Home/Login">退出</a></p>
+</div>

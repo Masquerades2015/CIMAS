@@ -1,0 +1,94 @@
+﻿@model IEnumerable<System.Xml.Linq.XElement>
+@{
+    ViewBag.Title = "NavLeft";    
+}
+@foreach (var nav1 in Model)
+{
+    <div class="unit current">
+        <h5>
+            @nav1.Attribute("title").Value.Trim()
+        </h5>
+        <ul class="menu_items">
+            @foreach (var xElem in nav1.Elements("NavItem"))
+            {
+
+                var requestController = ViewContext.RouteData.Values["controller"];
+                var requestAaction = ViewContext.RouteData.Values["action"];
+                var requestUrlHelper = new UrlHelper(ViewContext.RequestContext);
+                var requestRawUrl = ViewContext.RequestContext.HttpContext.Request.RawUrl;
+
+                var controller = xElem.Attribute("controller").Value;
+                var action = xElem.Attribute("action").Value;
+                var title = xElem.Attribute("title").Value;
+                var routeValues = GetRouteData(xElem.Attribute("routeValue").Value, xElem.Attribute("code").Value);
+                var htmlAttr = new Dictionary<string, object>();
+
+                string code = "";
+                if (!HttpContext.Current.Request.QueryString["code"].IsEmpty())
+                { code = HttpContext.Current.Request.QueryString["code"].Trim().ToLower(); }
+                if (xElem.Attribute("code").Value.Trim().ToLower() == code)
+                {
+                <li class="menu_current">@Html.ActionLink("● " + title, action, controller, routeValues, htmlAttr)
+                </li>
+                }
+                else
+                {
+                <li>@Html.ActionLink("● " + title, action, controller, routeValues, htmlAttr)
+                </li>
+                }
+            }
+        </ul>
+    </div>
+}
+@functions{
+    //生成Url的querystring
+    private RouteValueDictionary GetRouteData(string routeValue, string code = "")
+    {
+        string[] nameValues = routeValue.Split(new char[] { ';' });
+        RouteValueDictionary result = new RouteValueDictionary();
+        
+        //如果路由对象里没有code，则加之
+        if (!result.ContainsKey("code")) result.Add("code", code);
+
+        //----
+        foreach (string namevalue in nameValues)
+        {
+            string[] pair = namevalue.Split(new char[] { '=' });
+            if (pair.Length > 1)
+                result.Add(pair[0], pair[1]);
+        }
+        return result;
+    }
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".menu_items").hide(); //全部折叠
+        $(".menu_current").parent().show(0, function () { keepHeightFit(); }); //展开当前
+
+        //如果没有对应的展开菜单，则默认展开第一块菜单（夏春涛）
+        if ($(".menu_current").length == 0) {
+            $(".menu_items").first().slideDown("normal", function () { keepHeightFit(); });
+        }
+
+        //点击一级菜单，平滑展开当前、折叠其他
+        $(".unit h5").click(function () {
+            $(this).parent().siblings().children(".menu_items").slideUp("normal");
+            $(this).parent().children(".menu_items").slideDown("normal", function () { keepHeightFit(); });
+        });
+
+    });
+
+    //保持菜单栏与主内容高度一致（夏春涛20130703）
+    function keepHeightFit() {
+        var lf_ht_height = $(".lf_ht").css("height"); //菜单栏高度
+        var rg_ht_height = $(".rg_ht").css("height"); //内容高度    
+        $(".rg_ht").css("margin-top", "-" + lf_ht_height); //margin-top
+
+        if (lf_ht_height <= "619px")
+            $(".rg_ht").css("height", "auto"); //设置主内容高度为auto
+        else if (rg_ht_height <= lf_ht_height)
+            $(".rg_ht").css("height", lf_ht_height); //设置主内容高度=菜单栏高度 
+        else if (lf_ht_height <= rg_ht_height)
+            $(".rg_ht").css("height", rg_ht_height); //设置主内容高度不变
+    }
+</script>

@@ -1,0 +1,128 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <title>广州军区物资采购网（内网）</title>
+    <link href="@Url.Content("~/Content/images/style_index.css")" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-1.6.2.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/banner_shining/shining.js")"></script>
+    <script src="@Url.Content("~/Scripts/common.js")" type="text/javascript"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.epiclock.js")" charset="gbk"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.dateformat.js")"></script>
+    <script type="text/javascript" language="javascript">
+
+        $(function () {
+            $('#epiClock').epiclock({ format: 'Y年F月j日　G:i:s　D' });
+            $.epiclock();
+
+        });
+        //初始化，设置默认焦点控件（夏春涛2013-05-26）
+        $(document).ready(function () {
+            $("#Account").focus();
+        })
+
+        function totab() {
+            if (event.keyCode == 13)
+                $("#Password").focus();
+        }
+
+        function tologin() {
+            if (event.keyCode == 13)
+                $("form").submit();
+        }
+        function goQuery() {
+            var title = $("#NewTitle")
+            var newType = $("#NEWS_TYPE_CODE")
+            alert(title.val());
+            alert(newType.val());
+            location.href = "../Home/Query?title=" + title.val() + "&newType=" + newType.val();
+        }
+        
+       
+    </script>
+</head>
+@*@using (Html.BeginForm())
+{ *@
+<body>
+    <div class="top_lg">
+        <script language="javascript" type="text/javascript">
+            shining('@Url.Content("~/Content/banner_shining/shining.swf")');
+        </script>
+    </div>
+    <div class="nav_sy">
+        <ul>
+            <li><a href="" target="">首页</a></li>
+            <li><a href="" target="">采购公告</a></li>
+            <li><a href="" target="">中标公示</a></li>
+            <li><a href="" target="">政策法规</a></li>
+            <li><a href="" target="">供应商目录</a></li>
+            <li><a href="" target="">商品目录</a></li>
+            <li><a href="" target="">在线投诉</a></li>
+            <li style="background: none;"><a href="" target="">帮助文档</a></li>
+            <div class="clear">
+            </div>
+        </ul>
+    </div>
+    <!-- =============================================  以上是banner  ================================================== -->
+    <div style="width: 1020px; margin-left: auto; margin-right: auto;padding:0px;">
+        <table style="width: 1020px;padding:0px;margin:0px;border:0px;">
+            <tr>
+                <td>
+                    <!--  主内容部分 -->
+                    @RenderBody()
+                </td>
+                <td style="vertical-align: top">
+                    <!--===========================  右侧栏部分 begin ===============================-->
+                    <!-- 登录部分 -->
+                    <div class="rg_cg">
+                        <h3>
+                            登陆系统</h3>
+                        <form action="../home/Login" method="post">
+                        <p class="rg01">
+                            &nbsp;&nbsp;账 号：<input id="Account" maxlength="20" name="Account" type="text" onkeydown="totab()" />
+                        </p>
+                        <p class="rg01" style="_margin-left: 3px;">
+                            &nbsp;&nbsp;密 码：<input id="Password" maxlength="20" name="Password" type="password"
+                                onkeydown="tologin()" /></p>
+                        <p class="rg02">
+                            <a href="#" onclick='$("form").submit()'>登陆</a>
+                            <div class="clear">
+                            </div>
+                        </p>
+                        </form>
+                        <br />
+                        <p>
+                            <a href="">
+                                <img src="@Url.Content("~/Content/images/index_list_product.jpg")" /></a></p>
+                        <br />
+                        <p>
+                            <a href="">
+                                <img src="@Url.Content("~/Content/images/index_list_supplier.jpg")" /></a></p>
+                    </div>
+                    <!-- 新入库供应商列表 -->
+                    <div class="rg_gys">
+                        <h3>
+                            <span><a href="">+MORE</a></span>新入库供应商
+                        </h3>
+                        <p>
+                            <a href="">XXX</a></p>
+                        <p>
+                            <a href="">XXX</a></p>
+                    </div>
+                    <!--===========================  右侧栏部分 end ===============================-->
+                </td>
+            </tr>
+        </table>
+    </div>
+    <!-- ==================================================== 以下是footer ============================================================ -->
+    <!--footer -->
+    <div class="footer">
+        版权所有：广州军区物资采购网 Copyright 2013
+        <br />
+        地址：广州军区物资采购网 邮编：450008 电话：020-68588996
+    </div>
+</body>
+</html>

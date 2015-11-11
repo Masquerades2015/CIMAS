@@ -1,0 +1,22 @@
+﻿<div class="lf2_ht">
+    <!--
+    <img id='hide' src="@Url.Content("~/Content/images/biz_back_split.jpg")" />
+    -->
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        //点击分隔图片隐藏或展开左侧菜单
+        var hide_state = false;
+        $("#hide").click(function () {
+            if (hide_state == true) {
+                $(".lf_ht").show();
+            }
+            else {
+                $(".lf_ht").hide();
+            }
+
+            hide_state = !hide_state
+        });
+    });
+</script>

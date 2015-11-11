@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="597ea01bbb214878b1c1dda40f0f1231" Name="关系图1" ZoomLevel="95">
+        <EntityTypeShape EntityType="CIMASModel.Account" Width="1.5" PointX="7.3142684285129738" PointY="19.073801302851084" />
+        <EntityTypeShape EntityType="CIMASModel.AwardPunishmentIfo" Width="1.5" PointX="8.7124845984915673" PointY="23.105992074639534" />
+        <EntityTypeShape EntityType="CIMASModel.CourseTimeIfo" Width="1.5" PointX="5.7106197242208854" PointY="0.27505117667608481" />
+        <EntityTypeShape EntityType="CIMASModel.DepartmentIfo" Width="1.5" PointX="8.0071622207794171" PointY="2.3617364924222866" />
+        <EntityTypeShape EntityType="CIMASModel.DictActivity" Width="1.5" PointX="7.0882459949181635" PointY="7.8481253720112729" />
+        <EntityTypeShape EntityType="CIMASModel.DictCoursePlace" Width="1.5" PointX="11.235944777371335" PointY="10.401979674772351" />
+        <EntityTypeShape EntityType="CIMASModel.DictFamilyOrigin" Width="1.5" PointX="10.202075203043444" PointY="13.015752753715846" />
+        <EntityTypeShape EntityType="CIMASModel.DictNation" Width="1.5" PointX="8.9558892776052872" PointY="12.37391035834975" />
+        <EntityTypeShape EntityType="CIMASModel.DictPoliticsStatu" Width="1.5" PointX="8.58458443944556" PointY="30.792939006720175" />
+        <EntityTypeShape EntityType="CIMASModel.DictPosition" Width="1.5" PointX="0.26506897074406455" PointY="20.245523477087506" />
+        <EntityTypeShape EntityType="CIMASModel.DictProfClass" Width="1.5" PointX="1.3031526363003778" PointY="3.0603684052174764" />
+        <EntityTypeShape EntityType="CIMASModel.DictProfName" Width="1.5" PointX="6.3451847184194179" PointY="10.411341627319969" />
+        <EntityTypeShape EntityType="CIMASModel.DictRegister" Width="1.5" PointX="11.072409890160156" PointY="23.667655747229073" />
+        <EntityTypeShape EntityType="CIMASModel.DictRelation" Width="1.5" PointX="8.5703785496625944" PointY="11.564829980751886" />
+        <EntityTypeShape EntityType="CIMASModel.DictSemester" Width="1.5" PointX="6.9266703775742418" PointY="28.562235666700747" />
+        <EntityTypeShape EntityType="CIMASModel.DictStudentSource" Width="1.5" PointX="2.6305338957489162" PointY="24.226882856444867" />
+        <EntityTypeShape EntityType="CIMASModel.DictTerm" Width="1.5" PointX="11.990887384857464" PointY="12.962079367117061" />
+        <EntityTypeShape EntityType="CIMASModel.HeightWeightIfo" Width="1.5" PointX="10.316556806823499" PointY="23.009526039943811" />
+        <EntityTypeShape EntityType="CIMASModel.ImportantActivitiesIfo" Width="1.5" PointX="6.092437380036543" PointY="31.585528328821773" />
+        <EntityTypeShape EntityType="CIMASModel.InjureisIfo" Width="1.5" PointX="1.7385346655447664" PointY="20.84449201302812" />
+        <EntityTypeShape EntityType="CIMASModel.OptionalCourseIfo" Width="1.5" PointX="5.04715689506715" PointY="4.3633483221583758" />
+        <EntityTypeShape EntityType="CIMASModel.RequiredCourseIfo" Width="1.5" PointX="9.3866304929305944" PointY="6.6232547194805251" />
+        <EntityTypeShape EntityType="CIMASModel.Role" Width="1.5" PointX="3.7046095429475465" PointY="10.789770354884571" />
+        <EntityTypeShape EntityType="CIMASModel.SocietyRelationIfo" Width="1.5" PointX="7.0680782585721822" PointY="25.381260839002795" />
+        <EntityTypeShape EntityType="CIMASModel.StuBasicIfo" Width="1.5" PointX="8.1703602057743634" PointY="20.084331283385087" />
+        <EntityTypeShape EntityType="CIMASModel.StuGradeIfo" Width="1.5" PointX="0.28709265603082845" PointY="14.734057895249714" />
+        <EntityTypeShape EntityType="CIMASModel.StuScheduleIfo" Width="1.5" PointX="3.2040162902344096" PointY="13.736787280876555" />
+        <EntityTypeShape EntityType="CIMASModel.sysdiagram" Width="1.5" PointX="10.38215693383578" PointY="16.444347404150456" />
+        <EntityTypeShape EntityType="CIMASModel.TrainingTestIfo" Width="1.5" PointX="0.80749077014973891" PointY="12.821950635324209" />
+        <EntityTypeShape EntityType="CIMASModel.TrainTestTimeRankIfo" Width="1.5" PointX="9.59233713782967" PointY="23.560663517359952" />
+        <EntityTypeShape EntityType="CIMASModel.UnionHonorIfo" Width="1.5" PointX="3.5327656415909368" PointY="9.7876026079932235" />
+        <AssociationConnector Association="CIMASModel.FK_DepartmentIfo_DictPosition" />
+        <AssociationConnector Association="CIMASModel.FK_DepartmentIfo_DictSemester" />
+        <AssociationConnector Association="CIMASModel.FK_ImportantActivitiesIfo_DictActivity" />
+        <AssociationConnector Association="CIMASModel.FK_OptionalCourseIfo_DictCoursePlace" />
+        <AssociationConnector Association="CIMASModel.FK_RequiredCourseIfo_DictCoursePlace" />
+        <AssociationConnector Association="CIMASModel.FK_StuBasicIfo_DictFamilyOrigin" />
+        <AssociationConnector Association="CIMASModel.FK_StuBasicIfo_DictNation" />
+        <AssociationConnector Association="CIMASModel.FK_SocietyRelationIfo_DictPoliticsStatus" />
+        <AssociationConnector Association="CIMASModel.FK_StuBasicIfo_DictPoliticsStatus" />
+        <AssociationConnector Association="CIMASModel.FK_DictProfClass_DictProfName" />
+        <AssociationConnector Association="CIMASModel.FK_RequiredCourseIfoes_DictProfClasses" />
+        <AssociationConnector Association="CIMASModel.FK_StuBasicIfoes_DictProfClasses" />
+        <AssociationConnector Association="CIMASModel.FK_StuBasicIfo_DictRegister" />
+        <AssociationConnector Association="CIMASModel.FK_SocietyRelationIfo_DictRelation" />
+        <AssociationConnector Association="CIMASModel.FK_OptionalCourseIfo_DictSemester" />
+        <AssociationConnector Association="CIMASModel.FK_RequiredCourseIfo_DictSemester" />
+        <AssociationConnector Association="CIMASModel.FK_StuGradeIfo_DictSemester" />
+        <AssociationConnector Association="CIMASModel.FK_StuBasicIfo_DictStudentSource" />
+        <AssociationConnector Association="CIMASModel.FK_TrainingTestIfo_DictTerm" />
+        <AssociationConnector Association="CIMASModel.FK_StuScheduleIfo_OptionalCourseIfo" />
+        <AssociationConnector Association="CIMASModel.FK_TrainingTestIfo_TrainTestTimeRankIfo" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

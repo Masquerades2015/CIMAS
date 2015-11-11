@@ -1,0 +1,119 @@
+@using HiTechDevelopTrack.Web.HtmlHelpers
+@{
+    Layout = null;
+}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <title>高新技术企业信息备案系统</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <link rel="shortcut icon" href="@Url.Content("~/Content/Style/favicon.ico")" />
+    <script type="text/javascript" src="@Url.Content("~/scripts/jquery-2.1.4.min.js")"></script>
+    <script src="~/Content/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
+
+    <link href="~/Content/Style/css/css.css" rel="stylesheet" />
+    <link href="~/Content/Style/css/bootstrap.min.css" rel="stylesheet" />
+
+    <script src="@Url.Content("~/Scripts/bootstrap.js")" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            // 为偶数行设置样式类
+            $(".list tbody").each(function () {
+                $(this).children("tr:odd").addClass("chaxun_main_td_bg");
+            })
+
+        });
+        function letContentToggle() {
+            $(".index_xtitle").css("cursor", "pointer")
+            $(".index_xtitle").css("hover", "color: #FF00FF")
+        }
+
+    </script>
+    <style type="text/css">
+        .boxStyle .caption {
+            border-top: none;
+            cursor: pointer;
+            font-family: "Lucida Sans Unicode";
+            font-size: 12px;
+        }
+
+        .boxStyle {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .infor {
+            background: #000000;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            filter: Alpha(opacity=50);
+            -moz-opacity: .5;
+            opacity: 0.5;
+            display: none;
+            cursor: pointer;
+        }
+
+            .infor:hover {
+                filter: Alpha(opacity=90);
+                -moz-opacity: .9;
+                opacity: .9;
+            }
+
+        body {
+            font-family: 微软雅黑,宋体;
+        }
+    </style>
+</head>
+<body style="background-color: rgb(255,255,255);">
+    <div style="background-color: rgb(72, 23, 133); height: 110px;">
+           
+    </div>
+
+    <div class="clear">
+    </div>
+    <div>
+        <div class="index_main" @*class="container"*@ style="margin-top:20px;">
+            <div class="index_left" style="margin-top: 20px; width: 160px;">
+                <!--用户信息-->
+                @Html.Action("ShowCurrentAccountInfo", "Account")
+                <!--左侧菜单-->
+                @Html.Menu_Ver2()
+
+
+            </div>
+            <div class="index_right">
+                <div class="index_postion" style="margin-top: 0px;">
+                    <span class="index_postion_icon icon"></span>您当前的位置是：
+                    @if (!(ViewBag.IsError is Nullable) && ViewBag.IsError == true)
+                    { 
+                        <strong class="color1">错误提示</strong>
+                    }
+                    else
+                    {
+                        Html.RenderAction("NavPath", "Home");
+                    }
+                    @ViewBag.CurrentItem
+                </div>
+                <!--工作区-->
+                @RenderBody()
+            </div>
+            <div class="clear">
+            </div>
+            <div class="index_foot" style="text-align: center; margin-left: 150px; text-indent: 0px;">
+                高新技术企业信息备案系统 @{Html.RenderAction("Version", "Site");}版权所有 北京市科学技术委员会
+                <br />
+                业务支持：010-64874216 01064853155-802 技术支持：13521434017 13521434007 13521429849
+                                <br />
+                客服邮箱：talent_service@126.com
+            </div>
+            <div class="index_foot">
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
